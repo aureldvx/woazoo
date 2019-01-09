@@ -1,0 +1,23 @@
+
+/*----------  Breakpoints  ----------*/
+
+$breakpoints: (
+    tablet: 720px,
+    desktop: 1200px,
+);
+
+/* Réunir les media-queries spécifiques au support : Tablette */
+
+@mixin tablet {
+    @media all and (min-width: map-get($map: $breakpoints, $key: tablet)) {
+        @content;
+    }
+}
+
+/* Réunir les media-queries spécifiques au support : Ordinateur */
+
+@mixin desktop {
+    @media all and (min-width: map-get($map: $breakpoints, $key: desktop)) {
+        @content;
+    }
+}

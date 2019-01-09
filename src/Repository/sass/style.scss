@@ -1,6 +1,30 @@
 @charset "UTF-8";
 
-@import '/node_modules/minireset.css/minireset';
-@import '/node_modules/bulma/bulma';
-@import '/node_modules/materialize-css/sass/materialize';
+
+/*=============================================
+=            Styles distants                  =
+=============================================*/
+
+@import 'dist/bulma.scss';
+@import 'dist/materialize.scss';
+
+
+/*=============================================
+=            Styles locaux                    =
+=============================================*/
+
+/*----------  Paramètres  ----------*/
+
+@import 'guidelines/fonts';
+@import 'guidelines/colors';
+@import 'guidelines/functions';
+
+
+
+/*----------  Layouts  ----------*/
+
 @import 'components/layout';
+
+
+/*----------  Pages  ----------*/
+
