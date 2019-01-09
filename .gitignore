@@ -1,5 +1,6 @@
 node_modules/
 .vscode/
+.idea/
 config.codekit3
 ###> symfony/framework-bundle ###
 /.env.local

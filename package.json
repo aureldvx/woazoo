@@ -1,0 +1,38 @@
+{
+  "name": "woazoo",
+  "version": "1.0.0",
+  "description": "Woazoo project for Digital Campus",
+  "main": "public/",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "woazoo start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aureldvx/woazoo.git"
+  },
+  "keywords": [
+    "woazoo",
+    "search",
+    "engine",
+    "keywords",
+    "articles",
+    "blog"
+  ],
+  "author": "aureldvx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aureldvx/woazoo/issues"
+  },
+  "homepage": "https://github.com/aureldvx/woazoo#readme",
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "materialize-css": "^1.0.0-rc.2",
+    "minireset.css": "0.0.3",
+    "rellax": "^1.7.2",
+    "scroll-out": "^2.2.4",
+    "swup": "^1.7.18"
+  }
+}

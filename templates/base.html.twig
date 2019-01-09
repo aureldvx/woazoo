@@ -1,12 +1,52 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<html lang="fr_FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {# META TAGS • Généraux #}
+    <meta name="title" content="{% block metaTitle %}{% endblock %} - Woazoo">
+    <meta name="description" content="{% block metaDescription %}{% endblock %}">
+
+    {# META TAGS • Facebook #}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block metaFacebookUrl %}{% endblock %}">
+    <meta property="og:title" content="{% block metaFacebookTitle %}{% endblock %}">
+    <meta property="og:description" content="{% block metaFacebookDescription %}{% endblock %}">
+    <meta property="og:image" content="{% block metaFacebookImage %}{% endblock %}">
+
+    {# META TAGS • Twitter #}
+    <meta property="twitter:card" content="{% block metaTwitterCard %}{% endblock %}{# default : summary_large_image #}">
+    <meta property="twitter:url" content="{% block metaTwitterUrl %}{% endblock %}">
+    <meta property="twitter:title" content="{% block metaTwitterTitle %}{% endblock %}">
+    <meta property="twitter:description" content="{% block metaTwitterDescription %}{% endblock %}">
+    <meta property="twitter:image" content="{% block metaTwitterImage %}{% endblock %}">
+
+    {# Stylesheets #}
+    {% block stylesheets %}{% endblock %}
+
+    {# Page Title #}
+    <title>{% block pageTitle %}{% endblock %} | Woazoo</title>
+</head>
+<body>
+{# Header #}
+<header>
+
+</header>
+{# Contenu de la page #}
+{% block body %}{% endblock %}
+{# Footer #}
+<footer>
+
+</footer>
+{% block scripts %}{% endblock %}
+{#
+À utiliser si besoin dans les pages concernées :
+<script src="/node_modules/rellax/rellax.min.js"></script>
+<script src="/node_modules/scroll-out/dist/scroll-out.min.js"></script>
+<script src="/node_modules/swup/dist/swup.min.js"></script>
+#}
+</body>
 </html>
