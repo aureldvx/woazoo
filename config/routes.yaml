@@ -1,3 +1,47 @@
 homepage:
-    path:   /hello
+    path:   /
     controller: App\Controller\MainController::index
+
+listing_pages:
+    path:   /listing
+    controller: App\Controller\MainController::listing
+
+categories:
+    path:   /categories
+    controller: App\Controller\MainController::categories
+
+connexion:
+    path:   /connexion
+    controller: App\Controller\MainController::connexion
+
+mot_de_passe_oublie:
+    path:   /mot_de_passe_oublie
+    controller: App\Controller\MainController::mdpOublie
+
+parametres:
+    path:   /parametres
+    controller: App\Controller\MainController::parametres
+
+user_dashboard:
+    path:   /user/dashboard
+    controller: App\Controller\MainController::userDashboard
+
+user_search:
+    path:   /user/search
+    controller: App\Controller\MainController::userSearch
+
+articles_recents:
+    path:   /user/derniers-articles
+    controller: App\Controller\MainController::userLastArticles
+
+user_collections:
+    path:   /user/collections
+    controller: App\Controller\MainController::userCollections
+
+blogger_dashboard:
+    path:   /blogger/dashboard
+    controller: App\Controller\MainController::bloggerDashboard
+
+blogger_preview:
+    path:   /blogger/preview
+    controller: App\Controller\MainController::bloggerPreview

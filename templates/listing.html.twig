@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block pageTitle %}Listing des pages{% endblock %}
+
+{% block body %}
+<style>
+.links {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.link {
+    width: 300px;
+    text-decoration: none;
+    padding: 15px 20px;
+    margin: 15px;
+    background-color: #424242;
+    color: #ffffff;
+}
+</style>
+
+<h1>Page de développement Woazoo</h1>
+<h2>Liste des pages</h2>
+<div class="links">
+    <a href="{{ path("homepage") }}" class="link">Accueil</a>
+    <a href="{{ path("categories") }}" class="link">Catégories</a>
+    <a href="{{ path("connexion") }}" class="link">Connexion</a>
+    <a href="{{ path("mot_de_passe_oublie") }}" class="link">Mot de passe oublié</a>
+    <a href="{{ path("parametres") }}" class="link">Paramètres</a>
+    <a href="{{ path("user_dashboard") }}" class="link">Espace membre - Dashboard</a>
+    <a href="{{ path("user_search") }}" class="link">Espace membre - Recherche</a>
+    <a href="{{ path("articles_recents") }}" class="link">Espace membre - Articles récents</a>
+    <a href="{{ path("user_collections") }}" class="link">Espace membre - Collections</a>
+    <a href="{{ path("blogger_dashboard") }}" class="link">Espace blogueurs - Dashboard</a>
+    <a href="{{ path("blogger_preview") }}" class="link">Espace blogueurs - Preview</a>
+</div>
+<h2>Répertoires de travail</h2>
+<ul>
+    <li>
+        <strong>/src/Repository/ : <strong>
+        Tous les assets (sass, js, images)
+    </li>
+<li>
+    <strong>/public/ : </strong>
+    Tous les fichiers passés par le compilateur
+</li>
+<li>
+    <strong>/templates/ :</strong>
+    Toutes les pages html
+</li>
+</ul>
+{% endblock %}
