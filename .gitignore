@@ -19,3 +19,8 @@ config.codekit3
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
+composer.lock
+composer.phar
+package-lock.json
+symfony.lock
+*.lock
