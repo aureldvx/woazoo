@@ -34,5 +34,20 @@
     "rellax": "^1.7.2",
     "scroll-out": "^2.2.4",
     "swup": "^1.7.18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.8",
+    "gulp": "^4.0.0",
+    "gulp-cache": "^1.1.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-util": "^3.0.8",
+    "gulp-watch-sass": "^1.4.1",
+    "run-sequence": "^2.2.1"
   }
 }
