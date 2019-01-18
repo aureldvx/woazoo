@@ -24,3 +24,4 @@ composer.phar
 package-lock.json
 symfony.lock
 *.lock
+gulpfile.js
