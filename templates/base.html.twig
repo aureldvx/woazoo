@@ -32,24 +32,124 @@
     <title>{% block pageTitle %}{% endblock %} | Woazoo</title>
 </head>
 <body>
-{# Header #}
-<header>
 
-</header>
+    <!-- Background en fond -->
+    <div class="columnsBackground">
+        <div class="columnsBackground__column"></div>
+        <div class="columnsBackground__column"></div>
+        <div class="columnsBackground__column"></div>
+        <div class="columnsBackground__column"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+        <div class="columnsBackground__column showDesktop"></div>
+    </div>
 
-{# Contenu de la page #}
-{% block body %}{% endblock %}
-{# Footer #}
-<footer>
+    <!-- HEADER -->
+    <header>
+        
+        <!-- Logo Woazoo -->
+        <div class="header__brandLogo">
+            <img src="../img/logo-woazoo.svg" class="brandLogo__image" alt="Logo Woazoo représentant un W avec une plume d'écriture">
+        </div>
 
-</footer>
-{% block scripts %}{% endblock %}
-{#
-À utiliser si besoin dans les pages concernées :
-<script src="/node_modules/materialize-css/dist/js/materialize.min.js"></script>
-<script src="/node_modules/rellax/rellax.min.js"></script>
-<script src="/node_modules/scroll-out/dist/scroll-out.min.js"></script>
-<script src="/node_modules/swup/dist/swup.min.js"></script>
-#}
+        <!-- Menu burger -->
+        <div class="header__menuBurger hideDesktop">
+            <div class="menuBurger__bars menuBurger__topBar"></div>
+            <div class="menuBurger__bars menuBurger__centerBar"></div>
+            <div class="menuBurger__bars menuBurger__bottomBar"></div>
+        </div>
+
+        <!-- Logo utilisateur -->
+        <div class="header__userLogo hideDesktop">
+            <img src="" alt="Icône représentant un utilisateur afin de se connecter ou de s'inscrire">
+        </div>
+
+        <!-- Header navigation -->
+        <nav class="header__navigation">
+            <ul>
+                <li>
+                    <a href="#!" class="secondaryButton">Catégories</a>
+                </li>
+                <li>
+                    <a href="#!" class="secondaryButton">Présentation</a>
+                </li>
+                <li>
+                    <a href="#!" class="secondaryButton">Découverte</a>
+                </li>
+                <li>
+                    <a href="#!" class="primaryButton">Connexion / Inscription</a>
+                </li>
+                <li>
+                    <a href="#!" class="secondaryButton">
+                        Recherche
+                        <img src="" alt="Icône de loupe pour symboliser la fonction rechercher">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Contenu de la page -->
+    {% block body %}{% endblock %}
+
+
+    <!-- Footer -->
+    <footer>
+
+        <!-- Logo Woazoo -->
+        <div class="header__brandLogo">
+            <img src="../img/logo-woazoo.svg" class="brandLogo__image" alt="Logo Woazoo représentant un W avec une plume d'écriture">
+        </div>
+
+        <p class="footer__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptate voluptates impedit doloremque, ratione nulla delectus id cum molestiae dolores, temporibus adipisci, debitis tempora aut? Placeat facilis ullam rerum adipisci?
+        </p>
+
+        <!-- Liens footer-->
+        <div class="linksGroup linksGroup__presentation">
+            <h3>Présentation</h3>
+            <a href="#!" class="footerButton">À propos de nous</a>
+            <a href="#!" class="footerButton">Notre équipe</a>
+            <a href="#!" class="footerButton">FAQ Lecteurs</a>
+        </div>
+
+        <div class="linksGroup linksGroup__bloggers">
+            <h3>Espace Blogueurs</h3>
+            <a href="#!" class="footerButton">Accéder à mon espace</a>
+            <a href="#!" class="footerButton">FAQ Blogueur</a>
+        </div>
+
+        <div class="linksGroup linksGroup__advertisers">
+            <h3>Espace Annonceurs</h3>
+            <a href="#!" class="footerButton">Créer un compte annonceur</a>
+            <a href="#!" class="footerButton">Apport de Woazoo</a>
+            <a href="#!" class="footerButton">FAQ Annonceurs</a>
+        </div>
+
+        <div class="linksGroup linksGroup__legalMentions">
+            <h3>Mentions Légales</h3>
+            <a href="#!" class="footerButton">Données personnelles</a>
+            <a href="#!" class="footerButton">Utilisation des cookies</a>
+            <a href="#!" class="footerButton">Charte de confidentialité</a>
+            <a href="#!" class="footerButton">Mentions Légales</a>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    {% block scripts %}{% endblock %}
+    {#
+    À utiliser si besoin dans les pages concernées :
+    <script src="/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="/node_modules/rellax/rellax.min.js"></script>
+    <script src="/node_modules/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="/node_modules/swup/dist/swup.min.js"></script>
+    #}
 </body>
 </html>
