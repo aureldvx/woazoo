@@ -49,101 +49,117 @@
         <div class="columnsBackground__column showDesktop"></div>
     </div>
 
-<div>
-    
-</div>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="headerBackground">
+                <div class="headerBackground__column"></div>
+                <div class="headerBackground__column"></div>
+                <div class="headerBackground__column"></div>
+                <div class="headerBackground__column"></div>
+                <div class="headerBackground__column showDesktop"></div>
+                <div class="headerBackground__column showDesktop"></div>
+                <div class="headerBackground__column showDesktop"></div>
+                <div class="headerBackground__column showDesktop"></div>
+                <div class="headerBackground__column showDesktop"></div>
+                <div class="headerBackground__column showDesktop"></div>
+                <div class="headerBackground__column showDesktop"></div>
+                <div class="headerBackground__column showDesktop"></div>
+            </div>
 
-    <!-- HEADER -->
-    <header>
-        
-        <!-- Logo Woazoo -->
-        <div class="header__brandLogo">
-            <img src="../img/logo-woazoo.svg" class="brandLogo__image" alt="Logo Woazoo représentant un W avec une plume d'écriture">
-        </div>
+            <!-- Logo Woazoo -->
+            <div class="header__brandLogo">
+                <img src="../img/logo-woazoo.svg" class="brandLogo__image" alt="Logo Woazoo représentant un W avec une plume d'écriture">
+            </div>
 
-        <!-- Menu burger -->
-        <div class="header__menuBurger hideDesktop">
-            <div class="menuBurger__bars menuBurger__topBar"></div>
-            <div class="menuBurger__bars menuBurger__centerBar"></div>
-            <div class="menuBurger__bars menuBurger__bottomBar"></div>
-        </div>
+            <!-- Menu burger -->
+            <div class="header__menuBurger hideDesktop">
+                <div class="menuBurger__bars menuBurger__topBar"></div>
+                <div class="menuBurger__bars menuBurger__centerBar"></div>
+                <div class="menuBurger__bars menuBurger__bottomBar"></div>
+            </div>
 
-        <!-- Logo utilisateur -->
-        <div class="header__userLogo hideDesktop">
-            <img src="" alt="Icône représentant un utilisateur afin de se connecter ou de s'inscrire">
-        </div>
+            <!-- Logo utilisateur -->
+            <div class="header__userLogo hideDesktop">
+                <svg viewBox="0 0 512 512">
+                    <path d="M447.8 438.3c-7.2-31.8-48.3-47.3-62.5-52.3-15.6-5.5-37.8-6.8-52.1-10-8.2-1.8-20.1-6.3-24.1-11.1s-1.6-49.3-1.6-49.3 7.4-11.5 11.4-21.7c4-10.1 8.4-37.9 8.4-37.9s8.2 0 11.1-14.4c3.1-15.7 8-21.8 7.4-33.5-.6-11.5-6.9-11.2-6.9-11.2s6.1-16.7 6.8-51.3c.9-41.1-31.3-81.6-89.6-81.6-59.1 0-90.6 40.5-89.7 81.6.8 34.6 6.7 51.3 6.7 51.3s-6.3-.3-6.9 11.2c-.6 11.7 4.3 17.8 7.4 33.5 2.8 14.4 11.1 14.4 11.1 14.4s4.4 27.8 8.4 37.9c4 10.2 11.4 21.7 11.4 21.7s2.4 44.5-1.6 49.3c-4 4.8-15.9 9.3-24.1 11.1-14.3 3.2-36.5 4.5-52.1 10-14.2 5-55.3 20.5-62.5 52.3-1.1 5 2.7 9.7 7.9 9.7H440c5.1 0 8.9-4.7 7.8-9.7z"/>
+                </svg>
+            </div>
 
-        <!-- Header navigation -->
-        <nav class="header__navigation">
-            <ul>
-                <li>
-                    <a href="#!" class="secondaryButton">Catégories</a>
-                </li>
-                <li>
-                    <a href="#!" class="secondaryButton">Présentation</a>
-                </li>
-                <li>
-                    <a href="#!" class="secondaryButton">Découverte</a>
-                </li>
-                <li>
-                    <a href="#!" class="primaryButton">Connexion / Inscription</a>
-                </li>
-                <li>
-                    <a href="#!" class="secondaryButton">
-                        Recherche
-                        <img src="" alt="Icône de loupe pour symboliser la fonction rechercher">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-
-    <!-- Contenu de la page -->
-    {% block body %}{% endblock %}
+            <!-- Header navigation -->
+            <nav class="header__navigation">
+                <ul>
+                    <li>
+                        <a href="#!" class="secondaryButton">Catégories</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="secondaryButton">Présentation</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="secondaryButton">Découverte</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="primaryButton">Connexion / Inscription</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="secondaryButton">
+                            Recherche
+                            <img src="" alt="Icône de loupe pour symboliser la fonction rechercher">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
 
-    <!-- Footer -->
-    <footer>
+        <!-- Contenu de la page -->
+        {% block body %}{% endblock %}
 
-        <!-- Logo Woazoo -->
-        <div class="header__brandLogo">
-            <img src="../img/logo-woazoo.svg" class="brandLogo__image" alt="Logo Woazoo représentant un W avec une plume d'écriture">
-        </div>
 
-        <p class="footer__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptate voluptates impedit doloremque, ratione nulla delectus id cum molestiae dolores, temporibus adipisci, debitis tempora aut? Placeat facilis ullam rerum adipisci?
-        </p>
 
-        <!-- Liens footer-->
-        <div class="linksGroup linksGroup__presentation">
-            <h3>Présentation</h3>
-            <a href="#!" class="footerButton">À propos de nous</a>
-            <a href="#!" class="footerButton">Notre équipe</a>
-            <a href="#!" class="footerButton">FAQ Lecteurs</a>
-        </div>
+        <!-- Footer -->
+        <footer>
 
-        <div class="linksGroup linksGroup__bloggers">
-            <h3>Espace Blogueurs</h3>
-            <a href="#!" class="footerButton">Accéder à mon espace</a>
-            <a href="#!" class="footerButton">FAQ Blogueur</a>
-        </div>
+            <!-- Logo Woazoo -->
+            <div class="header__brandLogo">
+                <img src="../img/logo-woazoo.svg" class="brandLogo__image" alt="Logo Woazoo représentant un W avec une plume d'écriture">
+            </div>
 
-        <div class="linksGroup linksGroup__advertisers">
-            <h3>Espace Annonceurs</h3>
-            <a href="#!" class="footerButton">Créer un compte annonceur</a>
-            <a href="#!" class="footerButton">Apport de Woazoo</a>
-            <a href="#!" class="footerButton">FAQ Annonceurs</a>
-        </div>
+            <p class="footer__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptate voluptates impedit doloremque, ratione nulla delectus id cum molestiae dolores, temporibus adipisci, debitis tempora aut? Placeat facilis ullam rerum adipisci?
+            </p>
 
-        <div class="linksGroup linksGroup__legalMentions">
-            <h3>Mentions Légales</h3>
-            <a href="#!" class="footerButton">Données personnelles</a>
-            <a href="#!" class="footerButton">Utilisation des cookies</a>
-            <a href="#!" class="footerButton">Charte de confidentialité</a>
-            <a href="#!" class="footerButton">Mentions Légales</a>
-        </div>
-    </footer>
+            <!-- Liens footer-->
+            <div class="linksGroup linksGroup__presentation">
+                <h3>Présentation</h3>
+                <a href="#!" class="footerButton">À propos de nous</a>
+                <a href="#!" class="footerButton">Notre équipe</a>
+                <a href="#!" class="footerButton">FAQ Lecteurs</a>
+            </div>
+
+            <div class="linksGroup linksGroup__bloggers">
+                <h3>Espace Blogueurs</h3>
+                <a href="#!" class="footerButton">Accéder à mon espace</a>
+                <a href="#!" class="footerButton">FAQ Blogueur</a>
+            </div>
+
+            <div class="linksGroup linksGroup__advertisers">
+                <h3>Espace Annonceurs</h3>
+                <a href="#!" class="footerButton">Créer un compte annonceur</a>
+                <a href="#!" class="footerButton">Apport de Woazoo</a>
+                <a href="#!" class="footerButton">FAQ Annonceurs</a>
+            </div>
+
+            <div class="linksGroup linksGroup__legalMentions">
+                <h3>Mentions Légales</h3>
+                <a href="#!" class="footerButton">Données personnelles</a>
+                <a href="#!" class="footerButton">Utilisation des cookies</a>
+                <a href="#!" class="footerButton">Charte de confidentialité</a>
+                <a href="#!" class="footerButton">Mentions Légales</a>
+            </div>
+        </footer>
+
+    </div>
 
 
     <!-- Scripts -->
