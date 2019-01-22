@@ -1,5 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body, html {
@@ -9,20 +11,37 @@ body, html {
     font-size: 1rem;
 }
 
+/**
+ *
+ * RESET
+ *
+ */
+
+a {
+    display: block;
+}
+
+ul {
+    li {
+        list-style-type: none;
+    }
+}
+
+/**
+ *
+ * COMPONENTS RÉUTILISABLES
+ *
+ */
+
 %buttonPrimary {
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto;
-    height: 50px;
     text-decoration: none;
     color: $btnPrimaryColor;
     background-color: $btnPrimaryBgColor;
 }
 
 %buttonSecondary {
-    padding: 10px 15px;
     text-decoration: none;
-    color: $btnSecondaryBgColor;
+    color: $btnSecondaryColor;
     background-color: $btnSecondaryBgColor;
 }
 
@@ -74,6 +93,29 @@ body, html {
     }
 }
 
+
+/**
+ *
+ * NIVEAUX DE TITRES
+ *
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Old Standard TT', serif, system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.3rem;
+    text-align: center;
+}
 
 
 
@@ -127,21 +169,25 @@ body, html {
 header {
     grid-column: 1 / span 8;
     width: 100vw;
-    position: relative;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: grid;
-    grid-template: 50px / repeat(3, 33%);
+    grid-template: 50px / 25% 50% 25%;
     grid-template-areas: "burger logo profile";
     justify-content: center;
     align-items: center;
     box-shadow: 0px 2px 15px 0px rgba($black, 0.2);
+    z-index: 999;
 
     .headerBackground {
         width: 100%;
-        height: 100%;
-        position: absolute;
+        height: 50px;
+        position: fixed;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 998;
         display: grid;
         grid-template: 100% / repeat(4, 1fr);
         grid-gap: 2px;
@@ -160,6 +206,7 @@ header {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        z-index: 999;
 
         img {
             height: 35px;
@@ -176,6 +223,7 @@ header {
         align-items: flex-start;
         justify-content: center;
         cursor: pointer;
+        z-index: 999;
     }
 
     .header__userLogo {
@@ -184,9 +232,11 @@ header {
         margin-right: 20px;
         align-items: center;
         justify-content: flex-end;
-        cursor: pointer;
+        z-index: 999;
     }
 }
+
+/* MENU BURGER */
 
 .header__menuBurger {
     width: 30px;
@@ -200,17 +250,40 @@ header {
 
     .menuBurger__topBar {
         width: 100%;
+        transition: transform .5s ease-in-out;
     }
 
     .menuBurger__centerBar {
         margin: 6px 0;
         width: 66%;
+        transition: width 0.2s ease-in-out, opacity 0.5s ease-in-out;
     }
 
     .menuBurger__bottomBar {
         width: 33%;
+        transition: width .5s ease-in-out, transform .5s ease-in-out;
+    }
+
+    &.visible {
+        .menuBurger__topBar {
+            width: 100%;
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menuBurger__centerBar {
+            margin: 6px 0;
+            width: 0;
+            opacity: 0;
+        }
+
+        .menuBurger__bottomBar {
+            width: 100%;
+            transform: translateY(-8px) rotate(-45deg);
+        }
     }
 }
+
+/* Icône Profil */
 
 .header__userLogo {
     svg {
@@ -218,6 +291,7 @@ header {
         width: auto;
         transform: translateY(4px);
         fill: $black;
+        cursor: pointer;
     }
 }
 
@@ -229,6 +303,123 @@ header {
  */
 
 .header__navigation {
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 40px;
+    background-color: $white;
+    transform: translateY(-100vh);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .5s ease-in, opacity .25s ease-in, visibility 1s ease-in;
+    z-index: 98;
+
+    &.visible {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    ul {
+        li {
+            height: 50px;
+            width: 100%;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    .secondaryButton {
+        height: 100%;
+        width: 100%;
+        padding-left: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        svg {
+            height: 30px;
+            margin-right: 10px;
+            fill: $btnSecondaryColor;
+        }
+    }
+
+    .primaryButton {
+        margin-left: 20px;
+        padding: 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        svg {
+            height: 30px;
+            margin-right: 10px;
+            fill: $btnPrimaryColor;
+        }
+    }
+}
+
+/**
+ *
+ * CONTENU DE LA PAGE
+ *
+ */
+
+main {
+    margin-top: 55px;
+    grid-column: 1 / span 8;
+    width: 100%;
+}
+
+
+/**
+ *
+ * FOOTER
+ *
+ */
+
+footer {
+    grid-column: 1 / span 8;
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .footer__brandLogo {
+        width: 90%;
+        max-width: 150px;
+        height: auto;
+
+        .brandLogo__image {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .footer__description {
+        margin: 25px 0;
+    }
+
+    .linksGroup {
+        margin: 25px 0;
+
+        .footerButton {
+            @extend %buttonSecondary;
+            margin: 5px 0;
+            padding: 5px;
+        }
+    }
+
+    .footer__copyright, .footer__love {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.9rem;
+    }
 }

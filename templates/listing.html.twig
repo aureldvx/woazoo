@@ -5,11 +5,13 @@
 {% block body %}
 <style>
 .links {
-    width: 50%;
+    width: 90%;
+    max-width: 400px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .link {
@@ -20,6 +22,15 @@
     background-color: #424242;
     color: #ffffff;
 }
+
+h2, ul {
+    margin: 10px;
+}
+
+li {
+    margin: 10px 0;
+}
+
 </style>
 
 <h1>Page de développement Woazoo</h1>
@@ -36,20 +47,21 @@
     <a href="{{ path("user_collections") }}" class="link">Espace membre - Collections</a>
     <a href="{{ path("blogger_dashboard") }}" class="link">Espace blogueurs - Dashboard</a>
     <a href="{{ path("blogger_preview") }}" class="link">Espace blogueurs - Preview</a>
+
+    <h2>Répertoires de travail</h2>
+    <ul>
+        <li>
+            <strong>/src/Repository/ : </strong>
+            Tous les assets (sass, js, images)
+        </li>
+        <li>
+            <strong>/public/ : </strong>
+            Tous les fichiers passés par le compilateur
+        </li>
+        <li>
+            <strong>/templates/ :</strong>
+            Toutes les pages html
+        </li>
+    </ul>
 </div>
-<h2>Répertoires de travail</h2>
-<ul>
-    <li>
-        <strong>/src/Repository/ : <strong>
-        Tous les assets (sass, js, images)
-    </li>
-<li>
-    <strong>/public/ : </strong>
-    Tous les fichiers passés par le compilateur
-</li>
-<li>
-    <strong>/templates/ :</strong>
-    Toutes les pages html
-</li>
-</ul>
 {% endblock %}

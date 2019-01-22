@@ -8,7 +8,6 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const sourcemaps = require("gulp-sourcemaps");
 const jshint = require('gulp-jshint');
-const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const setDefaultBrowser = require('set-default-browser');
 
@@ -114,6 +113,7 @@ function watching() {
     });
 
     watch("./src/Repository/sass/**/*.scss", exportCss);
+    watch("./src/Repository/js/**/*.js", series(exportJs, browserSyncReload));
     watch("./templates/**/*.html.twig", browserSyncReload);
     watch('./src/Repository/img/**/*.*', series(imageOptimization, browserSyncReload));
 }
