@@ -55,6 +55,7 @@
     "gulp-watch-sass": "^1.4.1",
     "jshint": "^2.9.7",
     "run-sequence": "^2.2.1",
-    "set-default-browser": "^1.0.1"
+    "set-default-browser": "^1.0.1",
+    "typed.js": "^2.0.10"
   }
 }

@@ -2,23 +2,22 @@ const { src, dest, watch, parallel, series } = require ("gulp");
 const sass = require('gulp-sass'); // Needed to run SCSS/Sass preprocessor
 const browserSync = require('browser-sync').create(); // Needed to run Live Reload
 const imagemin = require('gulp-imagemin'); // Needed to Optimize Images
-const connect = require('gulp-connect-php');
+//const connect = require('gulp-connect-php');
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const sourcemaps = require("gulp-sourcemaps");
 const jshint = require('gulp-jshint');
 const babel = require('gulp-babel');
-const setDefaultBrowser = require('set-default-browser');
 
 
 // Browser Sync Start
 function browserSyncInitialization() {
-    setDefaultBrowser("Firefox Developer Edition");
-    connect.server({}, function () {
-        browserSync.init({
-            proxy: "127.0.0.1:8888/woazoo/public/index.php/listing"
-        });
+    browserSync.init({
+        proxy: "127.0.0.1:8888/woazoo/public/index.php/listing",
+        browser: ["brave browser beta", "firefox developer edition"],
+        reloadOnRestart: true,
+        reloadDelay: 0,
     });
 }
 exports.browserSyncInitialization = browserSyncInitialization;

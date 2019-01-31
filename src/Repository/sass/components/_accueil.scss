@@ -1,0 +1,99 @@
+/**
+ *
+ *  HERO Section
+ *
+ */
+
+.hero {
+    padding-top: 50px;
+    h1 {
+        .hero__mainTitle {
+            font-style: italic;
+        }
+        .hero__boldText {
+            font-style: normal;
+            font-weight: 600;
+        }
+        .hero__dynamicTitleCategory {
+            display: block;
+            height: 30px;
+            width: 100%;
+        }
+    }
+}
+
+// Formulaire de recherche
+
+form.hero__searchForm {
+    margin-top: 50px;
+
+    .hero__searchForm__inputField {
+        height: 50px;
+        width: 100%;
+        position: relative;
+
+        input {
+            height: 100%;
+            width: 100%;
+            padding: 0 45px 0 10px;
+            box-shadow: 0 1px 4px #c4c4c4;
+            border-radius: 5px;
+            border: none;
+            outline: 0;
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 50px;
+            height: 100%;
+            transform: translateY(-50%);
+
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+// Catégories en Tendances
+
+.h-titleCategoriesTrends {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.h-categoriesTrends {
+    display: grid;
+    grid-template: 100px / repeat(3, 32%);
+    grid-column-gap: 5px;
+}
+
+.h-category {
+    box-shadow: 0 0 4px #dbdbdb;
+    border-radius: 5px;
+
+    .h-category__image {
+        height: 70px;
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden;
+        background-color: $lightgrey;
+
+        img {
+            width: 100%;
+            min-height: 100%;
+        }
+    }
+    .h-category__title {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 0.8rem;
+        background-color: $white;
+    }
+}

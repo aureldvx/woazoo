@@ -5,8 +5,8 @@
 =            Styles distants                  =
 =============================================*/
 
-//@import 'dist/bulma.scss';
-//@import 'dist/materialize.scss';
+//@import 'dist/_bulma.scss';
+//@import 'dist/_materialize.scss';
 
 
 /*=============================================
@@ -27,3 +27,4 @@
 
 /*----------  Pages  ----------*/
 
+@import "components/accueil";
