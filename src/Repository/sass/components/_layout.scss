@@ -55,8 +55,9 @@ ul {
     @extend %buttonSecondary;
 }
 
-.boldText {
+.hero__boldText {
     font-weight: 700;
+    font-style: normal;
 }
 
 input {
@@ -121,11 +122,15 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
     text-align: center;
     padding: 5px;
-    @include addUnderlineGradient($lightgrey, $middlegrey);
-    @include addSupportBlendMode($lightgrey, $middlegrey);
+    @include addTextGradient($lightgrey, $middlegrey);
+    @include desktop {
+        font-size: 2rem;
+    }
 }
 
 
@@ -219,6 +224,7 @@ h2 {
         background-color: $lightgrey;
 
         @include desktop {
+            width: 100vw;
             grid-template: 100% / repeat(12, 1fr);
         }
 
@@ -452,7 +458,7 @@ main {
     width: 100%;
 
     @include desktop {
-        grid-column: 1 / span 24;
+        grid-column: 2 / span 22;
     }
 }
 
@@ -472,7 +478,7 @@ footer {
     justify-content: flex-start;
 
     @include desktop {
-        grid-column: 1 / span 24;
+        grid-column: 2 / span 22;
         display: grid;
         grid-template: repeat(4, auto) / 1.5fr 0.5fr repeat(3, 1fr);
         grid-template-areas:

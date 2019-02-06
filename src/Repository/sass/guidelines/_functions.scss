@@ -26,36 +26,15 @@ $breakpoints: (
  *  Ajouter la ligne sous les Titres avec le dégradé
  */
 
-@mixin addUnderlineGradient ($color1, $color2)
+@mixin addTextGradient ($color1, $color2)
 {
-    position: relative;
-    overflow: hidden;
+    background-image: url('../img/degrade.svg');
+    background-clip: text;
 
     & span {
-        color: $white;
+        color: transparent;
         padding: 0.225rem 0.5rem;
         line-height: 130%;
-        box-decoration-break: clone;
-    }
-}
-
-@mixin addSupportBlendMode($color1, $color2) {
-    @supports (mix-blend-mode: lighten) {
-        &.titleGradientMultiline::after {
-            position: absolute;
-            content: '';
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            pointer-events: none;
-            background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
-            -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
-            -ms-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
-            -o-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
-            linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-            mix-blend-mode: lighten;
-        }
     }
 }
 
