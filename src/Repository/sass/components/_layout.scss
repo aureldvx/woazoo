@@ -123,6 +123,9 @@ h1 {
 h2 {
     font-size: 1.3rem;
     text-align: center;
+    padding: 5px;
+    @include addUnderlineGradient($lightgrey, $middlegrey);
+    @include addSupportBlendMode($lightgrey, $middlegrey);
 }
 
 
@@ -182,7 +185,7 @@ h2 {
  *
  */
 
-header {
+.baseHeader {
     grid-column: 1 / span 8;
     width: 100vw;
     height: 50px;

@@ -29,16 +29,48 @@ $breakpoints: (
 @mixin addUnderlineGradient ($color1, $color2)
 {
     position: relative;
-    z-index: 2;
+    overflow: hidden;
+
+    & span {
+        color: $white;
+        padding: 0.225rem 0.5rem;
+        line-height: 130%;
+        box-decoration-break: clone;
+    }
+}
+
+@mixin addSupportBlendMode($color1, $color2) {
+    @supports (mix-blend-mode: lighten) {
+        &.titleGradientMultiline::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
+            -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
+            -ms-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
+            -o-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),
+            linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            mix-blend-mode: lighten;
+        }
+    }
+}
+
+@mixin addUnderline ($height, $bgColor) {
+    & {
+        position: relative;
+    }
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -4px;
         left: 0;
         width: 100%;
-        height: 5px;
-        z-index: 1;
-        background: linear-gradient(0.25turn, $color1, $color2);
+        height: $height;
+        background-color: $bgColor;
     }
 }
