@@ -46,6 +46,9 @@ form.hero__searchForm {
             position: absolute;
             right: 0;
             top: 50%;
+            background-color: transparent;
+            border: none;
+            outline: 0;
             width: 50px;
             height: 100%;
             transform: translateY(-50%);
@@ -118,6 +121,7 @@ section.popularBlogs {
     border-radius: 5px;
     background-color: $white;
     margin: 15px 0;
+    padding: 10px;
 
     .b-singleBlog__image {
         height: 120px;
@@ -132,13 +136,13 @@ section.popularBlogs {
     }
 
     .b-singleBlog__title {
-        margin: 10px 5px;
+        margin: 10px 0;
     }
 
     .b-singleBlog__description {
         font-size: 0.8rem;
         line-height: 125%;
-        margin: 10px 5px;
+        margin: 10px 0;
     }
 
     .b-singleBlog__link {
@@ -146,12 +150,11 @@ section.popularBlogs {
         letter-spacing: 1px;
         font-weight: 700;
         font-size: 1rem;
-        margin: 15px 5px;
-        height: 50px;
+        margin: 15px 0;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
         max-width: 300px;
     }
 
