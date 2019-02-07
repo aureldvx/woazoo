@@ -27,11 +27,9 @@
 
 <!-- start • HERO Section -->
     <section class="hero">
-        <h1>
-            <span class="hero__mainTitle">Bienvenue sur <span class="hero__boldText">Woazoo</span>, le moteur de <span class="hero__boldText">recherche</span> dédié aux <span class="hero__boldText">blogs</span> sur
-                <br>
-                <span class="hero__dynamicTitleCategory hero__boldText"></span>
-            </span>
+        <h1 class="hero__mainTitle">
+            <p>Bienvenue sur <span class="hero__boldText">Woazoo</span>, le moteur de <span class="hero__boldText">recherche</span> dédié aux <span class="hero__boldText">blogs</span> sur</p>
+            <p class="hero__dynamicTitleCategory hero__boldText"></p>
         </h1>
 
         <form action="{{ path('user_search') }}" method="get" class="hero__searchForm">
@@ -45,16 +43,23 @@
             </div>
         </form>
 
-        <p class="h-titleCategoriesTrends">En tendance actuellement :</p>
-        <div class="h-categoriesTrends">
-            {% for i in 0..2 %}
-                <a href="#!" class="h-category secondaryButton">
-                    <div class="h-category__image">
-                        <img src="../img/illu-lp.png" alt="Illustration de la catégorie">
-                    </div>
-                    <span class="h-category__title">Catégorie</span>
-                </a>
-            {% endfor %}
+        <div class="h-categoriesTrendsContainer">
+            <p class="h-titleCategoriesTrends">En tendance actuellement :</p>
+            <div class="h-categoriesTrends">
+                {% for i in 0..2 %}
+                    <a href="#!" class="h-category secondaryButton hideDesktop">
+                        <div class="h-category__image">
+                            <img src="../../src/Repository/img/img1.jpg" alt="Illustration de la catégorie">
+                        </div>
+                        <span class="h-category__title">Catégorie</span>
+                    </a>
+                {% endfor %}
+                {% for i in 0..5 %}
+                    <a href="#!" class="h-category secondaryButton showDesktop">
+                        <span class="h-category__title">Catégorie</span>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </section>
 <!-- end • HERO Section -->
@@ -66,7 +71,35 @@
             {% for i in 0..2 %}
                 <div class="b-blogsContainer__singleBlog">
                     <div class="b-singleBlog__image">
-                        <img src="../img/illu-lp.png" alt="illustration">
+                        <img src="../../src/Repository/img/img1.jpg" alt="illustration">
+                    </div>
+                    <h3 class="b-singleBlog__title">Le nom du blog</h3>
+                    <p class="b-singleBlog__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut deserunt, doloribus dolorum eius eos eveniet ipsum minus molestias nam, nesciunt omnis possimus quasi quod saepe, ullam velit veritatis vero.</p>
+                    <a href="" class="primaryButton b-singleBlog__link">Découvrir le blog</a>
+                    <div class="b-userActions">
+                        <div class="b-userActions__love b-userActions__element">
+                            <svg viewBox="0 0 512 512">
+                                <path d="M352 56h-1c-39.7 0-74.8 21-95 52-20.2-31-55.3-52-95-52h-1c-61.9.6-112 50.9-112 113 0 37 16.2 89.5 47.8 132.7C156 384 256 456 256 456s100-72 160.2-154.3C447.8 258.5 464 206 464 169c0-62.1-50.1-112.4-112-113z"/>
+                            </svg>
+                            <span class="b-userActions__loveCount">150</span>
+                        </div>
+                        <div class="b-userActions__bookmark b-userActions__element">
+                            <svg viewBox="0 0 512 512">
+                                <path d="M128 80v380c0 3.3 3.8 5.2 6.4 3.2l116.8-92c2.9-2.1 6.8-2.1 9.6 0l116.8 92c2.6 2 6.4.1 6.4-3.2V80c0-17.7-14.3-32-32-32H160c-17.7 0-32 14.3-32 32z"/>
+                            </svg>
+                        </div>
+                        <div class="b-userActions__share b-userActions__element">
+                            <svg viewBox="0 0 512 512">
+                                <path d="M444.7 230.4l-141.1-132c-1.7-1.6-3.3-2.5-5.6-2.4-4.4.2-10 3.3-10 8v66.2c0 2-1.6 3.8-3.6 4.1C144.1 195.8 85 300.8 64.1 409.8c-.8 4.3 5 8.3 7.7 4.9 51.2-64.5 113.5-106.6 212-107.4 2.2 0 4.2 2.6 4.2 4.8v65c0 7 9.3 10.1 14.5 5.3l142.1-134.3c2.6-2.4 3.4-5.2 3.5-8.4-.1-3.2-.9-6.9-3.4-9.3z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for i in 0..2 %}
+                <div class="b-blogsContainer__singleBlog showDesktop">
+                    <div class="b-singleBlog__image">
+                        <img src="../../src/Repository/img/img1.jpg" alt="illustration">
                     </div>
                     <h3 class="b-singleBlog__title">Le nom du blog</h3>
                     <p class="b-singleBlog__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut deserunt, doloribus dolorum eius eos eveniet ipsum minus molestias nam, nesciunt omnis possimus quasi quod saepe, ullam velit veritatis vero.</p>
@@ -104,14 +137,14 @@
                     <header class="a-singleArticle__header">
                         <div class="a-singleArticle__idBlog">
                             <div class="a-idBlog__img">
-                                <img src="../img/illu-lp.png" alt="illu">
+                                <img src="../../src/Repository/img/img1.jpg" alt="illu">
                             </div>
                             <h3 class="a-idBlog__title">Nom du blog</h3>
                         </div>
                         <span class="a-singleArticle__publicationDate"><time datetime="2019-01-14">3j</time></span>
                     </header>
                     <div class="a-singleArticle__image">
-                        <img src="../img/illu-lp.png" alt="illu">
+                        <img src="../../src/Repository/img/img1.jpg" alt="illu">
                     </div>
                     <h3 class="a-singleArticle__title">Titre de l'article</h3>
                     <p class="a-singleArticle__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -123,7 +156,46 @@
                             <svg viewBox="0 0 512 512">
                                 <path d="M352 56h-1c-39.7 0-74.8 21-95 52-20.2-31-55.3-52-95-52h-1c-61.9.6-112 50.9-112 113 0 37 16.2 89.5 47.8 132.7C156 384 256 456 256 456s100-72 160.2-154.3C447.8 258.5 464 206 464 169c0-62.1-50.1-112.4-112-113z"/>
                             </svg>
-                            <span class="b-userActions__loveCount">150</span>
+                            <span class="a-userActions__loveCount">150</span>
+                        </div>
+                        <div class="a-userActions__bookmark a-userActions__element">
+                            <svg viewBox="0 0 512 512">
+                                <path d="M128 80v380c0 3.3 3.8 5.2 6.4 3.2l116.8-92c2.9-2.1 6.8-2.1 9.6 0l116.8 92c2.6 2 6.4.1 6.4-3.2V80c0-17.7-14.3-32-32-32H160c-17.7 0-32 14.3-32 32z"/>
+                            </svg>
+                        </div>
+                        <div class="a-userActions__share a-userActions__element">
+                            <svg viewBox="0 0 512 512">
+                                <path d="M444.7 230.4l-141.1-132c-1.7-1.6-3.3-2.5-5.6-2.4-4.4.2-10 3.3-10 8v66.2c0 2-1.6 3.8-3.6 4.1C144.1 195.8 85 300.8 64.1 409.8c-.8 4.3 5 8.3 7.7 4.9 51.2-64.5 113.5-106.6 212-107.4 2.2 0 4.2 2.6 4.2 4.8v65c0 7 9.3 10.1 14.5 5.3l142.1-134.3c2.6-2.4 3.4-5.2 3.5-8.4-.1-3.2-.9-6.9-3.4-9.3z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+            {% for i in 0..0 %}
+                <article class="a-articlesContainer__singleArticle showDesktop">
+                    <header class="a-singleArticle__header">
+                        <div class="a-singleArticle__idBlog">
+                            <div class="a-idBlog__img">
+                                <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                            </div>
+                            <h3 class="a-idBlog__title">Nom du blog</h3>
+                        </div>
+                        <span class="a-singleArticle__publicationDate"><time datetime="2019-01-14">3j</time></span>
+                    </header>
+                    <div class="a-singleArticle__image">
+                        <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                    </div>
+                    <h3 class="a-singleArticle__title">Titre de l'article</h3>
+                    <p class="a-singleArticle__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a class="a-singleArticle__link primaryButton" href="#!">Lire la suite</a>
+                    <div class="a-userActions">
+                        <div class="a-userActions__love a-userActions__element">
+                            <svg viewBox="0 0 512 512">
+                                <path d="M352 56h-1c-39.7 0-74.8 21-95 52-20.2-31-55.3-52-95-52h-1c-61.9.6-112 50.9-112 113 0 37 16.2 89.5 47.8 132.7C156 384 256 456 256 456s100-72 160.2-154.3C447.8 258.5 464 206 464 169c0-62.1-50.1-112.4-112-113z"/>
+                            </svg>
+                            <span class="a-userActions__loveCount">150</span>
                         </div>
                         <div class="a-userActions__bookmark a-userActions__element">
                             <svg viewBox="0 0 512 512">
@@ -141,6 +213,36 @@
         </div>
     </section>
 <!-- end • LAST ARTICLES Section -->
+
+<!-- start • TOP CATEGORIES Section -->
+    <section class="topCategories">
+        <h2 class="titleGradientMultiline"><span>Les catégories à la Une</span></h2>
+        <div class="c-categoriesContainer">
+                {% for i in 0..7 %}
+                    <div href="#!" class="c-categoriesContainer__singleCategory">
+                        <a href="#!" class="c-singleCategory__image">
+                            <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                        </a>
+                        <h3 class="c-singleCategory__title"><a href="#!">Nom de la Categorie</a></h3>                            
+                        <span class="c-singleCategory__number">112 articles</span>                                                                        
+                        <div class="c-userActions">
+                            <div class="c-userActions__love c-userActions__element">
+                                <svg viewBox="0 0 512 512">
+                                    <path d="M352 56h-1c-39.7 0-74.8 21-95 52-20.2-31-55.3-52-95-52h-1c-61.9.6-112 50.9-112 113 0 37 16.2 89.5 47.8 132.7C156 384 256 456 256 456s100-72 160.2-154.3C447.8 258.5 464 206 464 169c0-62.1-50.1-112.4-112-113z"/>
+                                </svg>
+                                <span class="c-userActions__loveCount">150</span>
+                            </div>
+                            <div class="c-userActions__bookmark c-userActions__element">
+                                <svg viewBox="0 0 512 512">
+                                    <path d="M128 80v380c0 3.3 3.8 5.2 6.4 3.2l116.8-92c2.9-2.1 6.8-2.1 9.6 0l116.8 92c2.6 2 6.4.1 6.4-3.2V80c0-17.7-14.3-32-32-32H160c-17.7 0-32 14.3-32 32z"/>
+                                </svg>
+                            </div>
+                        </div>                                        
+                    </div>
+                {% endfor %}
+            </div>
+    </section>
+<!-- end • TOP CATEGORIES Section -->
 
 {% endblock %}
 

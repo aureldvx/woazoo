@@ -6,19 +6,26 @@
 
 .hero {
     padding-top: 50px;
-    h1 {
-        .hero__mainTitle {
-            font-style: italic;
-        }
-        .hero__boldText {
+    .hero__mainTitle {
+        font-style: italic;
+        @include desktop {
+            font-size: 3rem;
             font-style: normal;
-            font-weight: 600;
+            line-height: 150%;
+            width: 50%;
+            margin: 0 auto;
         }
-        .hero__dynamicTitleCategory {
-            display: block;
-            height: 30px;
-            width: 100%;
-        }
+    }
+
+    .hero__boldText {
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    .hero__dynamicTitleCategory {
+        display: block;
+        height: 30px;
+        width: 100%;
     }
 }
 
@@ -26,6 +33,10 @@
 
 form.hero__searchForm {
     margin-top: 50px;
+    @include desktop {
+        width: 50%;
+        margin: 100px auto 0 auto;
+    }
 
     .hero__searchForm__inputField {
         height: 50px;
@@ -40,6 +51,15 @@ form.hero__searchForm {
             border-radius: 5px;
             border: none;
             outline: 0;
+            transition: all 0.2s ease;
+            @include desktop {
+                font-size: 1rem;
+
+                &:active, &:focus {
+                    box-shadow: 0 1px 15px 2px #c4c4c4;
+                    transform: scale(1.02);
+                }
+            }
         }
 
         button {
@@ -52,6 +72,7 @@ form.hero__searchForm {
             width: 50px;
             height: 100%;
             transform: translateY(-50%);
+            cursor: pointer;
 
             svg {
                 width: 30px;
@@ -63,15 +84,34 @@ form.hero__searchForm {
 
 // Catégories en Tendances
 
+.h-categoriesTrendsContainer {
+    @include desktop {
+        width: 50%;
+        margin: 20px auto 0 auto;
+        display: grid;
+        grid-template: auto / auto 15px 1fr;
+        grid-template-areas: "trendTitle . trendButton";
+    }
+}
+
 .h-titleCategoriesTrends {
     text-align: center;
-    margin: 50px 0 20px 0;
+    @include desktop {
+        grid-area: trendTitle;
+        text-align: left;
+    }
 }
 
 .h-categoriesTrends {
+    grid-area: trendButton;
     display: grid;
     grid-template: 100px / repeat(3, 32%);
     grid-column-gap: 5px;
+
+    @include desktop{
+        grid-template: auto / repeat(6, 1fr);
+        grid-column-gap: 10px;
+    }
 }
 
 .h-category {
@@ -80,7 +120,6 @@ form.hero__searchForm {
 
     .h-category__image {
         height: 70px;
-        object-fit: cover;
         object-position: center;
         overflow: hidden;
         background-color: $lightgrey;
@@ -88,6 +127,7 @@ form.hero__searchForm {
         img {
             width: 100%;
             min-height: 100%;
+            object-fit: cover;
         }
     }
     .h-category__title {
@@ -107,12 +147,22 @@ form.hero__searchForm {
 
 section.popularBlogs {
     margin-top: 40px;
+    @include desktop {
+        margin-top: 100px;
+    }
 
     .b-blogsContainer {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+
+        @include desktop {
+            margin-top: 50px;
+            display: grid;
+            grid-template: repeat(2, auto) / repeat(3, 1fr);
+            grid-gap: 50px 50px;
+        }
     }
 }
 
@@ -121,52 +171,89 @@ section.popularBlogs {
     border-radius: 5px;
     background-color: $white;
     margin: 15px 0;
+    padding: 10px;
+    @include desktop {
+        margin: 0;
+        padding: 0 10px 0 0;
+        display: grid!important;
+        min-height: 300px;
+        grid-template: repeat(4, auto) / 40% 60%;
+        grid-column-gap: 10px;
+        grid-template-areas:
+        "singleBlogImage singleBlogActions"
+        "singleBlogImage singleBlogTitle"
+        "singleBlogImage singleBlogDescription"
+        "singleBlogImage singleBlogLink";
+    }
 
     .b-singleBlog__image {
         height: 120px;
-        object-fit: cover;
         object-position: bottom;
         overflow: hidden;
+        @include desktop {
+            grid-area: singleBlogImage;
+            height: 100%;
+            object-position: center;
+        }
 
         img {
+            object-fit: cover;
             width: 100%;
             min-height: 100%;
         }
     }
 
     .b-singleBlog__title {
-        margin: 10px 5px;
+        margin: 10px 0;
+        @include desktop {
+            grid-area: singleBlogTitle;
+        }
     }
 
     .b-singleBlog__description {
         font-size: 0.8rem;
         line-height: 125%;
-        margin: 10px 5px;
+        margin: 10px 0;
+        @include desktop {
+            grid-area: singleBlogDescription;
+            padding-right: 20px;
+        }
     }
 
     .b-singleBlog__link {
-        text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 1rem;
-        margin: 15px 5px;
-        height: 50px;
+        margin: 15px auto;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
         max-width: 300px;
+        @include desktop {
+            grid-area: singleBlogLink;
+            margin: 0;
+        }
     }
 
     .b-userActions {
         display: grid;
         grid-template: auto / repeat(3, 1fr);
         grid-template-areas: "love bookmark share";
+
+        @include desktop {
+            margin-top: 10px;
+            grid-area: singleBlogActions;
+            grid-template: 40px / repeat(3, 50px);
+            grid-template-areas: "love bookmark share";
+            justify-content: flex-end;
+        }
     }
 
     .b-userActions__element {
         align-self: start;
         justify-self: center;
+        cursor: pointer;
 
         svg {
             height: 20px;
@@ -203,12 +290,21 @@ section.popularBlogs {
 
 section.lastArticles {
     margin-top: 40px;
+    @include desktop {
+        margin-top: 100px;
+    }
 
     .a-articlesContainer {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        @include desktop {
+            display: grid;
+            margin-top: 50px;
+            grid-template: auto / repeat(4, 1fr);
+            grid-gap: 50px;
+        }
     }
 }
 
@@ -217,7 +313,7 @@ section.lastArticles {
     border-radius: 5px;
     background-color: $white;
     margin: 15px 0;
-    display: grid;
+    display: grid!important;
     grid-template-rows: 15px minmax(50px,auto) 200px auto  auto auto auto 15px;
     grid-template-columns: 15px 1fr 15px;
     grid-template-areas:
@@ -229,6 +325,9 @@ section.lastArticles {
         ". articleLink ."
         ". articleActions ."
         ". . .";
+    @include desktop {
+        grid-template-rows: 5px minmax(50px,auto) 200px auto  auto auto auto 15px;
+    }
 
     .a-singleArticle__header {
         grid-area: articleHeader;
@@ -250,19 +349,22 @@ section.lastArticles {
 
             .a-idBlog__img {
                 grid-area: a_blogLogo;
-                height: 30px;
-                object-fit: cover;
+                height: 30px;      
                 object-position: center;
                 overflow: hidden;
 
                 img {
                     width: 100%;
                     min-height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
                 }
             }
 
             .a-idBlog__title {
                 grid-area: a_blogName;
+                font-family: "CircularStd-Medium", system-ui, sans-serif;
+                font-size: 1rem;
             }
         }
 
@@ -273,19 +375,20 @@ section.lastArticles {
 
     .a-singleArticle__image {
         grid-area: articleImg;
-        object-fit: cover;
         object-position: center;
         overflow: hidden;
 
         img {
           width: 100%;
           min-height: 100%;
+          object-fit: cover;
         }
     }
 
     .a-singleArticle__title {
         grid-area: articleTitle;
         margin: 15px 0;
+        font-weight: 700;
     }
 
     .a-singleArticle__description {
@@ -296,12 +399,11 @@ section.lastArticles {
 
     .a-singleArticle__link {
         grid-area: articleLink;
-        text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 1rem;
         margin: 15px auto;
-        height: 50px;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -311,5 +413,150 @@ section.lastArticles {
 
     .a-userActions {
         grid-area: articleActions;
+        display: grid;
+        grid-template: auto / repeat(3, 1fr);
+        grid-template-areas: "alove abookmark ashare";
+    }
+
+    .a-userActions__element {
+        align-self: start;
+        justify-self: center;
+        cursor: pointer;
+
+        svg {
+            height: 20px;
+            width: auto;
+        }
+    }
+
+    .a-userActions__love {
+        grid-area: alove;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        span {
+            margin-top: -5px;
+            font-size: 0.8rem;
+        }
+    }
+
+    .a-userActions__bookmark {
+        grid-area: abookmark;
+    }
+
+    .a-userActions__share {
+        grid-area: ashare;
+    }
+}
+
+/**
+ * Section TOP CATEGORIES
+ */
+
+ section.topCategories {
+    margin-top: 40px;
+     @include desktop {
+         margin-top: 100px;
+     }
+
+    .c-categoriesContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        @include desktop {
+            margin-top: 50px;
+            display: grid;
+            grid-template: repeat(2, auto) / repeat(4, 22.80%);
+            grid-gap: 50px 50px;
+        }
+    }
+}
+
+.c-categoriesContainer__singleCategory {
+    box-shadow: 0 0 4px #dcdcdc;
+    border-radius: 5px;
+    background-color: $white;
+    width: 100%;
+    margin: 15px 0;
+    display: grid;
+    grid-template-rows: 100px auto auto;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "topCategoryImage topCategoryImage"
+        "topCategoryTitle topCategoryTitle"
+        "topCategoryNumber topCategoryActions";
+    @include desktop {
+        grid-template-rows: 150px auto auto;
+    }
+
+    .c-singleCategory__image {
+        grid-area: topCategoryImage;
+        object-position: center;
+        overflow: hidden;
+        border-radius: 5px 5px 0 0;
+
+        img {
+            object-fit: cover;
+            min-width: 100%;
+            height: 100%;              
+        }
+    }
+
+    .c-singleCategory__title {
+        grid-area: topCategoryTitle;
+        padding: 10px;
+        margin: 10px 0;
+
+        a {
+            text-decoration: none;
+            color: $black;
+        }
+    }
+
+    .c-singleCategory__number {
+        grid-area: topCategoryNumber;
+        padding-left: 10px;
+        align-self: center;
+    }
+
+    .c-userActions {
+        grid-area: topCategoryActions;
+        justify-self: flex-end;
+        display: grid;
+        grid-template: auto / repeat(2, 50px);
+        grid-template-areas: "clove cbookmark";
+    }
+
+    .c-userActions__element {
+        align-self: start;
+        justify-self: center;
+        cursor: pointer;
+
+        svg {
+            height: 20px;
+            width: auto;
+        }
+    }
+
+    .c-userActions__love {
+        grid-area: clove;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        span {
+            margin-top: -5px;
+            font-size: 0.8rem;
+        }
+    }
+
+    .c-userActions__bookmark {
+        grid-area: cbookmark;
     }
 }
