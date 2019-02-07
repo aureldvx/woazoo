@@ -12,7 +12,7 @@
             font-size: 3rem;
             font-style: normal;
             line-height: 150%;
-            width: 50%;
+            width: 60%;
             margin: 0 auto;
         }
     }
@@ -34,7 +34,7 @@
 form.hero__searchForm {
     margin-top: 50px;
     @include desktop {
-        width: 50%;
+        width: 60%;
         margin: 100px auto 0 auto;
     }
 
@@ -85,8 +85,10 @@ form.hero__searchForm {
 // Catégories en Tendances
 
 .h-categoriesTrendsContainer {
+    margin-top: 20px;
     @include desktop {
-        width: 50%;
+        margin-top: 0;
+        width: 60%;
         margin: 20px auto 0 auto;
         display: grid;
         grid-template: auto / auto 15px 1fr;
@@ -96,7 +98,9 @@ form.hero__searchForm {
 
 .h-titleCategoriesTrends {
     text-align: center;
+    margin-bottom: 10px;
     @include desktop {
+        margin-bottom: 0;
         grid-area: trendTitle;
         text-align: left;
     }
@@ -229,6 +233,7 @@ section.popularBlogs {
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 95%;
         max-width: 300px;
         @include desktop {
             grid-area: singleBlogLink;
@@ -470,7 +475,7 @@ section.lastArticles {
         @include desktop {
             margin-top: 50px;
             display: grid;
-            grid-template: repeat(2, auto) / repeat(4, 22.80%);
+            grid-template: repeat(2, auto) / repeat(4, 1fr);
             grid-gap: 50px 50px;
         }
     }
@@ -501,8 +506,8 @@ section.lastArticles {
 
         img {
             object-fit: cover;
-            min-width: 100%;
-            height: 100%;              
+            min-height: 100%;
+            width: 100%;              
         }
     }
 
@@ -560,3 +565,64 @@ section.lastArticles {
         grid-area: cbookmark;
     }
 }
+
+/**
+ * NEWSLETTER Section
+ */
+
+ section.newsletter {
+     margin-top: 40px;
+     @include desktop {
+         margin-top: 100px;
+     }
+
+     .n-description {
+        margin: 25px auto;
+        text-align: center;
+        @include desktop {
+            width: 60%;
+            margin: 50px auto;
+         }
+     }
+
+     .n-newsletterForm {
+         margin: 0 auto;
+         @include desktop {
+             width: 50%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+         }
+     }
+
+     .n-inputNewsletter {
+        width: 100%;
+        height: 50px;
+        border-radius: 2px 2px 0 0!important;
+        border-top: solid 1.5px $black;
+        border-left: solid 1.5px $black;
+        border-right: solid 1.5px $black;
+        border-bottom: none;
+        padding-left: 10px;
+        @include desktop {
+            border-radius: 2px 0 0 2px!important;
+            border: solid 1.5px $black;
+        }
+     }
+
+     .n-subscribeNewletter{
+        margin: 0 auto;
+        font-size: 1rem;
+        background: $black;
+        height: 50px;
+        width: 100%;
+        padding: 0 20px;
+        border: none;
+        border-radius: 0 0 2px 2px!important;
+        cursor: pointer;
+        @include desktop {
+            width: auto;
+            border-radius: 0 2px 2px 0!important;
+        }
+    }
+ }
