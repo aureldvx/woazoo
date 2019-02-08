@@ -16,8 +16,7 @@ function browserSyncInitialization() {
     browserSync.init({
         proxy: "127.0.0.1:8888/woazoo/public/index.php/listing",
         browser: ["brave browser beta", "firefox developer edition"],
-        reloadOnRestart: true,
-        reloadDelay: 0,
+        reloadOnRestart: true
     });
 }
 exports.browserSyncInitialization = browserSyncInitialization;
@@ -26,7 +25,9 @@ exports.browserSyncInitialization = browserSyncInitialization;
 
 // Browser Sync Reload
 function browserSyncReload() {
-    browserSync.reload();
+    browserSync.reload({
+    reloadDelay: 0
+    });
 }
 exports.browserSyncReload = browserSyncReload;
 
@@ -80,7 +81,14 @@ function imageOptimization() {
                     {removeEmptyAttrs: true},
                     {removeDesc: true},
                     {removeTitle: true},
-                    {removeViewBox: false}
+                    {removeViewBox: false},
+                    {removeDoctype:true},
+                    {removeMetadata:true},
+                    {removeDesc:true},
+                    {removeTitle:true},
+                    {removeXMLNS:true},
+                    {removeEmptyText:true},
+                    {removeEmptyContainers:true}
                 ]
             })
         ],{verbose: true}
