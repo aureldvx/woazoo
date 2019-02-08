@@ -17,10 +17,13 @@
 {% block metaTwitterImage %}{% endblock %}
 
 {# Stylesheets #}
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="../css/style.css">{% endblock %}
 
 {# Page Title #}
 {% block pageTitle %}Le moteur de recherche de blogs{% endblock %}
+
+{# Class du body #}
+{% block bodyName %}homepage{% endblock %}
 
 {# Contenu de la page #}
 {% block body %}
@@ -71,7 +74,7 @@
             {% for i in 0..2 %}
                 <div class="b-blogsContainer__singleBlog">
                     <div class="b-singleBlog__image">
-                        <img src="../../src/Repository/img/img1.jpg" alt="illustration">
+                        <img src="../img/img1.jpg" alt="illustration">
                     </div>
                     <h3 class="b-singleBlog__title">Le nom du blog</h3>
                     <p class="b-singleBlog__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut deserunt, doloribus dolorum eius eos eveniet ipsum minus molestias nam, nesciunt omnis possimus quasi quod saepe, ullam velit veritatis vero.</p>

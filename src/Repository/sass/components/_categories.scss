@@ -1,0 +1,178 @@
+#categories {
+    .trendingCategories {
+        margin-top: 40px;
+        @include desktop {
+            margin-top: 100px;
+        }
+    }
+
+    .tc-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include desktop {
+            display: grid;
+        }
+    }
+
+    .tc-containerTrends {
+        @include desktop {
+            grid-template: repeat(4, auto) / repeat(2, 1fr);
+            grid-template-areas:
+                "fcTrend1 fcTrend2"
+                "fcTrend1 fcTrend3"
+                "fcTrend1 fcTrend4"
+                "fcTrend1 fcTrend5";
+        }
+    }
+
+    .tc-container__categoryTrend {
+        grid-area: fcTrend1;
+    }
+
+    .tc-container__secondaryTrends:nth-child(1) {
+        grid-area: fcTrend2;
+    }
+
+    .tc-container__secondaryTrends:nth-child(2) {
+        grid-area: fcTrend2;
+    }
+
+    .tc-container__secondaryTrends:nth-child(1) {
+        grid-area: fcTrend2;
+    }
+
+    .tc-container__secondaryTrends:nth-child(1) {
+        grid-area: fcTrend2;
+    }
+
+    .tc-containerAll {
+        @include desktop {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+
+    .tc-container__category {
+        box-shadow: 0 0 4px #dcdcdc;
+        border-radius: 5px;
+        background-color: $white;
+        width: 100%;
+        margin: 15px 0;
+        padding-bottom: 15px;
+        display: grid;
+        grid-template: 200px auto auto 40px / repeat(2, 1fr);
+        grid-template-areas:
+            "cImage cImage"
+            "cTitle cTitle"
+            "cDesc cDesc"
+            "cNumber cActions";
+    }
+
+    .tc-category__image {
+        grid-area: cImage;
+        object-position: center;
+        overflow: hidden;
+        border-radius: 5px 5px 0 0;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    .tc-category__title {
+        grid-area: cTitle;
+        padding: 0 10px;
+        margin-top: 15px;
+    }
+
+    .tc-category__description {
+        grid-area: cDesc;
+        padding: 0 10px;
+        margin-top: 15px;
+    }
+
+    .tc-category__numberArticles {
+        grid-area: cNumber;
+        padding: 0 10px;
+        margin-top: 15px;
+        color: $hardgrey;
+    }
+
+    .userCardActions {
+        margin-right: 10px;
+        grid-area: cActions;
+        display: grid;
+        grid-template-columns: 50% 35%;
+        justify-content: flex-end;
+    }
+
+    .userCardActions__element {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        justify-content: flex-start;
+        svg {
+            height: 25px;
+        }
+    }
+
+    .userCardActions__loveCount {
+        margin-right: 5px;
+    }
+
+    .filterCategories {
+        margin-top: 40px;
+        @include desktop {
+            margin-top: 100px;
+        }
+    }
+
+    .fc-filterResults {
+        margin-top: 10px;
+        padding: 10px;
+        box-shadow: 0 0 4px #dcdcdc;
+        border-radius: 5px;
+        background-color: $white;
+    }
+
+    .fc-inputCategoryName {
+        margin: 10px 0;
+
+        input {
+            width: 100%;
+            height: 40px;
+            padding-left: 5px;
+            border: none;
+            border-bottom: solid 1.5px $black;
+        }
+    }
+
+    .fc-inputTidyResults {
+        display: block;
+    }
+
+    .fc-submitFilters {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 1rem;
+        height: 45px;
+        border: solid 1.5px $black;
+        background-color: transparent;
+        color: $black;
+
+        &:active, :focus {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    .tc-container__categoryTrend {
+        @include desktop {
+
+        }
+    }
+}

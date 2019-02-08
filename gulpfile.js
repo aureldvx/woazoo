@@ -43,7 +43,7 @@ exports.browserSyncStream = browserSyncStream;
 // Preprocessor task
 function exportCss() {
     return (
-        src("./src/Repository/sass/style.scss")
+        src("./src/Repository/sass/*.scss")
         // Initialize sourcemaps before compilation starts
         .pipe(sourcemaps.init())
 
