@@ -82,6 +82,14 @@ form.hero__searchForm {
     }
 }
 
+.hero__searchForm--user {
+    margin-top: 20px;
+
+    @include desktop {
+        margin: 40px auto 0 auto!important;
+    }
+}
+
 // Catégories en Tendances
 
 .h-categoriesTrendsContainer {
@@ -604,9 +612,11 @@ section.lastArticles {
         border-right: solid 1.5px $black;
         border-bottom: none;
         padding-left: 10px;
+        outline: 0;
         @include desktop {
             border-radius: 2px 0 0 2px!important;
             border: solid 1.5px $black;
+            font-size: 1rem;
         }
      }
 
@@ -620,6 +630,7 @@ section.lastArticles {
         border: none;
         border-radius: 0 0 2px 2px!important;
         cursor: pointer;
+        outline: 0;
         @include desktop {
             width: auto;
             border-radius: 0 2px 2px 0!important;

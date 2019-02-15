@@ -18,41 +18,99 @@
 
     .tc-containerTrends {
         @include desktop {
+            margin-top: 40px;
             grid-template: repeat(4, auto) / repeat(2, 1fr);
             grid-template-areas:
                 "fcTrend1 fcTrend2"
                 "fcTrend1 fcTrend3"
                 "fcTrend1 fcTrend4"
                 "fcTrend1 fcTrend5";
+            grid-gap: 15px 25px;
         }
     }
 
     .tc-container__categoryTrend {
-        grid-area: fcTrend1;
+        @include desktop{
+            grid-area: fcTrend1;
+            grid-template: 0.5fr auto auto 40px / repeat(2, 1fr) !important;
+            padding-bottom: 15px!important;
+
+            .tc-category__image {
+                img {
+                    min-width: 100%;
+                    object-fit: none;
+                }
+            }
+        }
     }
 
-    .tc-container__secondaryTrends:nth-child(1) {
-        grid-area: fcTrend2;
-    }
-
-    .tc-container__secondaryTrends:nth-child(2) {
-        grid-area: fcTrend2;
-    }
-
-    .tc-container__secondaryTrends:nth-child(1) {
-        grid-area: fcTrend2;
-    }
-
-    .tc-container__secondaryTrends:nth-child(1) {
-        grid-area: fcTrend2;
-    }
-
-    .tc-containerAll {
+    .tc-container__secondaryTrends {
         @include desktop {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template: repeat(3, auto) / repeat(3, 1fr)!important;
+            grid-template-areas:
+                    "stImage stTitle stTitle"
+                    "stImage stDescription stDescription"
+                    "stImage stNumber stActions"!important;
+            margin: 0!important;
+        }
+
+        .tc-category__image {
+            @include desktop {
+                grid-area: stImage;
+                height: 10px;
+                border-radius: 5px 0 0 5px;
+            }
+        }
+
+        .tc-category__title {
+            @include desktop {
+                grid-area: stTitle;
+            }
+        }
+
+        .tc-category__description {
+            @include desktop {
+                grid-area: stDescription;
+            }
+        }
+
+        .tc-category__numberArticles {
+            @include desktop {
+                grid-area: stNumber;
+                margin-bottom: 15px;
+            }
+        }
+
+        .userCardActions {
+            @include desktop {
+                grid-area: stActions;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &.tc-container__secondaryTrend0 {
+        @include desktop {
+            grid-area: fcTrend2;
+        }
+    }
+
+    &.tc-container__secondaryTrend1 {
+        @include desktop {
+            grid-area: fcTrend3;
+        }
+    }
+
+    &.tc-container__secondaryTrend2 {
+        @include desktop {
+            grid-area: fcTrend4;
+        }
+    }
+
+    &.tc-container__secondaryTrend3 {
+        @include desktop {
+            grid-area: fcTrend5;
         }
     }
 
@@ -70,6 +128,10 @@
             "cTitle cTitle"
             "cDesc cDesc"
             "cNumber cActions";
+        @include desktop {
+            margin: 0;
+            padding: 0;
+        }
     }
 
     .tc-category__image {
@@ -124,10 +186,36 @@
         margin-right: 5px;
     }
 
+    /**
+     * ALL CATEGORIES Section
+     */
+
+    .allCategories {
+        margin-top: 50px;
+        @include desktop {
+            margin-top: 100px;
+        }
+    }
+
+    .allCategoriesContainer {
+        @include desktop {
+            display: grid;
+            grid-template: auto / 300px 1fr;
+            grid-column-gap: 25px;
+            grid-template-areas: "acFilters acResults";
+            margin-top: 40px;
+        }
+    }
+
+    /**
+     * FILTER RESULTS Section
+     */
+
     .filterCategories {
         margin-top: 40px;
         @include desktop {
-            margin-top: 100px;
+            grid-area: acFilters;
+            margin-top: 0;
         }
     }
 
@@ -137,6 +225,9 @@
         box-shadow: 0 0 4px #dcdcdc;
         border-radius: 5px;
         background-color: $white;
+        @include desktop {
+            margin-top: 0;
+        }
     }
 
     .fc-inputCategoryName {
@@ -148,6 +239,10 @@
             padding-left: 5px;
             border: none;
             border-bottom: solid 1.5px $black;
+            outline: 0;
+            @include desktop {
+                font-size: 1rem;
+            }
         }
     }
 
@@ -163,6 +258,7 @@
         border: solid 1.5px $black;
         background-color: transparent;
         color: $black;
+        outline: 0;
 
         &:active, :focus {
             background-color: $black;
@@ -170,9 +266,27 @@
         }
     }
 
-    .tc-container__categoryTrend {
-        @include desktop {
+    /**
+     * ALL RESULTS Section
+     */
 
+    .tc-containerAll {
+        @include desktop {
+            grid-area: acResults;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .tc-container__category {
+            @include desktop {
+                width: 30%;
+                height: auto;
+                margin: 0 1.5% 25px 1.5%;
+                padding-bottom: 10px;
+            }
         }
     }
 }

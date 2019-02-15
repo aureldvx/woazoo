@@ -1,0 +1,202 @@
+#bloggerPreview {
+    /**
+     * HERO Section
+     */
+
+    .hero {
+        padding-top: 0;
+
+        .bp-backgroundIllustration {
+            width: 100vw;
+            height: 150px;
+            margin-left: calc((100vw / 8) * (-1));
+            background-image: url('../../img/img1.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+
+            @include desktop {
+                margin-left: calc((100vw / 24) * (-1));
+                height: 300px;
+            }
+        }
+
+        .bp-profileImage {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: url('../../img/img1.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 4px #DADADA;
+
+            @include desktop {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .bp-titleBlog {
+            font-weight: 700;
+            width: 100%;
+            max-width: 1200px;
+            margin: 60px auto 0 auto;
+            @include desktop {
+                margin: 120px auto 0 auto;
+            }
+        }
+
+        .bp-descriptionBlog {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .bp-counters {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            max-width: 400px;
+            margin: 60px auto 0 auto;
+            @include desktop {
+                margin: 30px auto 0 auto;
+            }
+        }
+
+        .bp-counters__element {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            svg {
+                height: 30px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    /**
+     * ARTICLES ÉPINGLÉS Section
+     */
+
+    .bp-articlesEpingles {
+        margin-top: 50px;
+
+        .bp-numberEpingles {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .bp-articlesEpinglesContainer {
+        @include desktop{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+    }
+
+    /**
+     * ALL ARTICLES Section
+     */
+
+    .bp-allArticles {
+        margin-top: 40px;
+    }
+
+    .bp-allArticlesContainer {
+        @include desktop{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+    }
+
+    /**
+     * SINGLE ARTICLE
+     */
+
+    .u-lastArticles__singleContainer {
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 0 1px 4px #c4c4c4;
+        margin: 30px 0;
+
+        @include desktop {
+            width: 22%;
+            margin: 0 1.5% 25px 1.5%;
+        }
+    }
+
+    .u-lastArticle__image {
+        object-position: center;
+        overflow: hidden;
+        height: 125px;
+        border-radius: 5px 5px 0 0;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .u-lastArticle__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 15px 0;
+        padding: 0 10px;
+    }
+
+    .u-lastArticle__content {
+        padding: 0 10px;
+    }
+
+    .u-lastArticle__linkRead {
+        margin: 20px auto;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        max-width: 300px;
+    }
+
+    .u-lastArticle__footer {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: "nomBlog" "actions";
+        grid-row-gap: 5px;
+
+        .u-userActions {
+            grid-area: actions;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+        }
+    }
+
+    .u-userActions__element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+            height: 25px;
+        }
+    }
+}

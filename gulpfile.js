@@ -108,7 +108,7 @@ exports.exportJs = exportJs;
 function watching() {
     browserSync.init({
         // You can tell browserSync to use this directory and serve it as a mini-server
-        proxy: "127.0.0.1:8888/woazoo/public/index.php/listing"
+        proxy: "127.0.0.1:8000"
     });
 
     watch("./src/Repository/sass/**/*.scss", exportCss);

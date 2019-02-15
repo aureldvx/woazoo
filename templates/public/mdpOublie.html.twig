@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+{# META TAGS • Général #}
+{% block metaTitle %}{% endblock %}
+{% block metaDescription %}{% endblock %}
+{# META TAGS • Facebook #}
+{% block metaFacebookUrl %}{% endblock %}
+{% block metaFacebookTitle %}{% endblock %}
+{% block metaFacebookDescription %}{% endblock %}
+{% block metaFacebookImage %}{% endblock %}
+{# META TAGS • Twitter #}
+{% block metaTwitterCard %}{% endblock %}
+{# default : summary_large_image #}
+{% block metaTwitterUrl %}{% endblock %}
+{% block metaTwitterTitle %}{% endblock %}
+{% block metaTwitterDescription %}{% endblock %}
+{% block metaTwitterImage %}{% endblock %}
+{# Stylesheets #}
+{% block stylesheets %}<link rel="stylesheet" href="../css/mdpOublie.css">{% endblock %}
+{# Page Title #}
+{% block pageTitle %}Mot de passe oublié{% endblock %}
+{# Class du body #}
+{% block bodyName %}mdpOublie{% endblock %}
+{# BODY #}
+{% block body %}
+    <!-- start • HERO Section -->
+    <section class="hero">
+        <h1 class="hero__mainTitle">
+            <p>Un oubli, ça arrive à tout le monde.</p>
+        </h1>
+    </section>
+    <!-- end • HERO Section -->
+
+    <!-- start • FORM Section -->
+    <form action="mdpOublie.html.twig" method="post" role="form" class="mdpForm">
+        <div class="input-field-component">
+            <label for="emailRecovery">Email de connexion</label>
+            <input type="email" name="emailRecovery" id="emailRecovery" placeholder="prenom.nom@email.me">
+        </div>
+        <button type="submit" class="primaryButton">Envoyer l'email de modification</button>
+        <a href="{{ path('connexion') }}" class="mdp-returnPrev">Revenir à la page de connexion</a>
+    </form>
+    <!-- end • FORM Section -->
+{% endblock %}
+{% block scripts %}{% endblock %}

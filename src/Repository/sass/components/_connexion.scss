@@ -1,0 +1,290 @@
+#connexion {
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .secondaryButton {
+            display: inline-block;
+            margin: 20px auto 0 auto;
+            text-align: center;
+            border-bottom: solid 1.5px $black;
+        }
+    }
+
+    .c-formsContainer {
+        @include desktop {
+            width: 60%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template: auto / 1fr 1fr;
+            grid-template-areas:
+                "formInscription formConnexion";
+            grid-column-gap: 50px;
+        }
+    }
+
+    .input-field-component__radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        input {
+            display: block;
+            margin-right: 6px;
+        }
+    }
+
+    .c-formInscription {
+        grid-area: formInscription;
+    }
+
+    .c-rightPart {
+        @include desktop {
+            grid-area: formConnexion;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+
+    .c-formConnexion {
+        @include desktop {
+            width: 100%;
+        }
+    }
+
+    .c-form {
+        box-shadow: 0px 2px 15px 0px rgba($black, 0.2);
+        background-color: $white;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 25px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .c-formSubtitle:first-child {
+            margin: 10px 0;
+        }
+
+        .c-formSubtitle:last-child {
+            margin: 15px 0;
+        }
+
+        .primaryButton {
+            height: 45px;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            font-size: 1rem;
+            border: none;
+        }
+    }
+
+    .connexionApis {
+        width: 100%;
+    }
+
+    .connexionApis__buttons {
+        height: 45px;
+        width: 100%;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        text-decoration: none;
+        box-shadow: 0px 2px 15px 0px rgba($black, 0.2);
+        border-radius: 2px;
+
+        svg {
+            height: 45%;
+            margin-right: 10px;
+        }
+    }
+
+    .connexionApis__facebook {
+        background-color: #485A96;
+        color: $white;
+
+        svg {
+            fill: $white;
+        }
+    }
+
+    .connexionApis__google {
+        background-color: $lightgrey;
+        color: #4285F4;
+    }
+
+    .connexionApis__twitter {
+        background-color: #2DAAE1;
+        color: $white;
+
+        svg {
+            height: 40%;
+            fill: $white;
+        }
+    }
+
+    .c-formMainContainer {
+        width: 100%;
+    }
+
+    .c-professionnels {
+        box-shadow: 0px 2px 15px 0px rgba($black, 0.2);
+        border-radius: 5px;
+        background-color: $white;
+        padding: 10px;
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+    }
+
+    .c-proAvantages {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 90%;
+
+        .c-avantages {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 10px 0;
+
+            svg {
+                height: 30px;
+                margin-right: 10px;
+            }
+
+            span {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .linkButton {
+        text-transform: uppercase;
+        font-family: 'Old Standard TT', serif;
+        font-weight: 700;
+        display: inline-block;
+        border: solid 1.5px $black;
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 5px;
+        margin-top: 20px;
+        text-decoration: none;
+        color: $black;
+
+        @include desktop {
+            height: 45px;
+            padding: 10px;
+        }
+    }
+
+    .c-fonctionnalites {
+        margin: 40px 0;
+
+        @include desktop {
+            width: 60%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+    }
+
+    .c-singleFonctionnalite {
+        margin: 50px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        h3 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        img {
+            margin: 20px 0;
+            width: 80%;
+        }
+    }
+
+    .c-singleFonctionnalite1, .c-singleFonctionnalite3 {
+        @include desktop {
+            display: grid;
+            grid-template: auto auto / 1fr 1fr;
+            grid-column-gap: 30px;
+            grid-template-areas:
+                "fonctionnaliteImage fonctionnaliteTitle"
+                "fonctionnaliteImage fonctionnaliteDescription";
+        }
+
+        h3 {
+            @include desktop {
+                grid-area: fonctionnaliteTitle;
+                text-align: left;
+            }
+        }
+
+        p {
+            @include desktop {
+                grid-area: fonctionnaliteDescription;
+                align-self: flex-start;
+            }
+        }
+
+        img {
+            @include desktop {
+                grid-area: fonctionnaliteImage;
+            }
+        }
+    }
+
+    .c-singleFonctionnalite2, .c-singleFonctionnalite4 {
+        @include desktop {
+            display: grid;
+            grid-template: auto auto / 1fr 1fr;
+            grid-column-gap: 30px;
+            grid-template-areas:
+                    "fonctionnaliteTitle fonctionnaliteImage"
+                    "fonctionnaliteDescription fonctionnaliteImage";
+        }
+
+        h3 {
+            @include desktop {
+                grid-area: fonctionnaliteTitle;
+                text-align: left;
+            }
+        }
+
+        p {
+            @include desktop {
+                grid-area: fonctionnaliteDescription;
+                align-self: flex-start;
+            }
+        }
+
+        img {
+            @include desktop {
+                grid-area: fonctionnaliteImage;
+            }
+        }
+    }
+}

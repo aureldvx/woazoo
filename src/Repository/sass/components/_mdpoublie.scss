@@ -1,0 +1,33 @@
+#mdpOublie {
+    .mdpForm {
+        width: 100%;
+        max-width: 700px;
+        margin: 40px auto 0 auto;
+        padding: 25px;
+        background-color: $white;
+        box-shadow: 0px 2px 15px 0px rgba($black, 0.2);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .input-field-component {
+            width: 100%;
+        }
+
+        .primaryButton {
+            margin-top: 10px;
+            font-size: 1rem;
+            padding: 15px 20px;
+            border: none;
+            max-width: 300px;
+        }
+
+        .mdp-returnPrev {
+            margin-top: 20px;
+            color: $black;
+            text-align: center;
+        }
+    }
+}

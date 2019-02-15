@@ -15,7 +15,7 @@ connexion:
     controller: App\Controller\MainController::connexion
 
 mot_de_passe_oublie:
-    path:   /mot_de_passe_oublie
+    path:   /mot-de-passe-oublie
     controller: App\Controller\MainController::mdpOublie
 
 parametres:

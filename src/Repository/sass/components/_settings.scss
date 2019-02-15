@@ -1,0 +1,217 @@
+#settings {
+    .settingsForm {
+        width: 100%;
+        max-width: 1000px;
+        margin: 50px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .secondaryButton {
+        outline: 0;
+        border: none;
+        border-bottom: solid 1.5px $black;
+        font-family: 'Old Standard TT', serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-bottom: 4px;
+        margin-bottom: 30px;
+        @include desktop {
+            font-size: 1rem;
+        }
+    }
+
+    .settingsGroup {
+        width: 100%;
+        background-color: $white;
+        box-shadow: 0px 2px 15px 0px rgba($black, 0.2);
+        border-radius: 5px;
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .settingsGroup__header {
+        border-bottom: solid 2px $middlegrey;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+
+        h2 {
+            font-size: 1rem;
+            text-align: left;
+            padding: 8px 0 0 0;
+            @include desktop {
+                font-size: 1.4rem;
+            }
+        }
+
+        .collapsible-circle {
+            width: 35px;
+            height: 35px;
+            background-color: $middlegrey;
+            box-shadow: 0px 2px 15px 0px rgba($black, 0.2);
+            text-align: center;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    }
+    
+    .input-field-component {
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            margin-bottom: 0;
+            border-radius: 2px 2px 0 0;
+
+            @include desktop {
+                width: 300px;
+                border-radius: 2px 0 0 2px;
+            }
+
+            svg {
+                height: 50%;
+                fill: $white;
+                margin-right: 10px;
+            }
+
+            span {
+                color: $white;
+                font-family: "CircularStd-Book", system-ui, sans-serif;
+            }
+        }
+    }
+
+    .settingsGroup__social {
+        .input-field-component {
+            @include desktop {
+                flex-direction: row;
+            }
+        }
+    }
+
+    .input-social__facebook {
+        label {
+            background-color: #485A96;
+            height: 45px;
+            padding: 0 10px;
+
+            svg {
+                margin-right: 18px;
+            }
+        }
+
+        input {
+            border: solid 1.5px #485A96;
+            border-radius: 0 0 2px 2px;
+            @include desktop {
+                border-radius: 0 2px 2px 0;
+            }
+        }
+    }
+
+    .input-social__twitter {
+        label {
+            background-color: #2DAAE1;
+            height: 45px;
+            padding: 0 10px;
+
+            svg {
+                height: 40%;
+            }
+        }
+
+        input {
+            border: solid 1.5px #2DAAE1;
+            border-radius: 0 0 2px 2px;
+            @include desktop {
+                border-radius: 0 2px 2px 0;
+            }
+        }
+    }
+
+    .input-social__instagram {
+        label {
+            background-color: #BB328F;
+            height: 45px;
+            padding: 0 10px;
+        }
+
+        input {
+            border: solid 1.5px #BB328F;
+            border-radius: 0 0 2px 2px;
+            @include desktop {
+                border-radius: 0 2px 2px 0;
+            }
+        }
+    }
+
+    .input-social__linkedin {
+        label {
+            background-color: #1881BA;
+            height: 45px;
+            padding: 0 10px;
+        }
+
+        input {
+            border: solid 1.5px #1881BA;
+            border-radius: 0 0 2px 2px;
+            @include desktop {
+                border-radius: 0 2px 2px 0;
+            }
+        }
+    }
+
+    .input-field-component__checkbox {
+        align-items: flex-start;
+        flex-direction: row-reverse;
+
+        @include desktop {
+            justify-content: flex-end;
+        }
+
+        label {
+            width: auto;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin: 5px 10px 0 0;
+            background-color: transparent;
+        }
+    }
+
+    .dangerSettings {
+        margin: 20px 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        p {
+            margin: 15px 0;
+        }
+
+        .dangerButton {
+            color: $red;
+            border-bottom-color: $red;
+            display: inline-block;
+        }
+    }
+
+    .input-field-component__file {
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+}

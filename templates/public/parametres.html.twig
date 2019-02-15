@@ -1,0 +1,226 @@
+{% extends "base.html.twig" %}
+{# META TAGS • Général #}
+{% block metaTitle %}{% endblock %}
+{% block metaDescription %}{% endblock %}
+{# META TAGS • Facebook #}
+{% block metaFacebookUrl %}{% endblock %}
+{% block metaFacebookTitle %}{% endblock %}
+{% block metaFacebookDescription %}{% endblock %}
+{% block metaFacebookImage %}{% endblock %}
+{# META TAGS • Twitter #}
+{% block metaTwitterCard %}{% endblock %}
+{# default : summary_large_image #}
+{% block metaTwitterUrl %}{% endblock %}
+{% block metaTwitterTitle %}{% endblock %}
+{% block metaTwitterDescription %}{% endblock %}
+{% block metaTwitterImage %}{% endblock %}
+{# Stylesheets #}
+{% block stylesheets %}<link rel="stylesheet" href="../css/settings.css">{% endblock %}
+{# Page Title #}
+{% block pageTitle %}Paramètres utilisateur{% endblock %}
+{# Class du body #}
+{% block bodyName %}settings{% endblock %}
+{# BODY #}
+{% block body %}
+    <!-- start • HERO Section -->
+    <section class="hero">
+        <h1 class="hero__mainTitle">
+            <p><span class="hero__boldText">Paramètres</span> de votre <span class="hero__boldText">profil</span></p>
+        </h1>
+    </section>
+    <!-- end • HERO Section -->
+
+    <!-- start • SETTINGS Section -->
+    <form action="parametres.html.twig" method="post" role="form" class="settingsForm" enctype="multipart/form-data">
+        <button type="submit" class="secondaryButton">Sauvegarder les changements</button>
+
+        <!-- Group • Infos personnelles -->
+        <div class="settingsGroup settingsGroup__infos">
+            <div class="settingsGroup__header">
+                <h2>Informations de profil</h2>
+                <div class="collapsible-circle collapsible--close">
+                    –
+                </div>
+            </div>
+            <div class="settingsGroup__content">
+                <div class="input-field-component__file">
+                    <label for="photoProfil">Uploader une photo</label>
+                    <input type="file" id="photoProfil" name="photoProfil" accept="image/*">
+                </div>
+                <div class="input-field-component">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+                <div class="input-field-component">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom">
+                </div>
+                <div class="input-field-component">
+                    <label for="email">Adresse email</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div class="input-field-component">
+                    <label for="pseudo">Pseudo</label>
+                    <input type="text" id="pseudo" name="pseudo">
+                    <span class="inform-message">Par défaut, votre pseudo est défini sur prenom_nom</span>
+                </div>
+                <div class="input-field-component">
+                    <label for="bio">Bio</label>
+                    <textarea name="bio" id="bio"></textarea>
+                    <span class="inform-message">300 caractères max</span>
+                </div>
+            </div>
+        </div>
+        <!-- EndGroup • Infos personnelles -->
+
+        <!-- Group • Mot de passe -->
+        <div class="settingsGroup settingsGroup__password">
+            <div class="settingsGroup__header">
+                <h2>Mot de passe</h2>
+                <div class="collapsible-circle collapsible--close">
+                    –
+                </div>
+            </div>
+            <div class="settingsGroup__content">
+                <div class="input-field-component">
+                    <label for="actualPassword">Mot de passe actuel</label>
+                    <input type="password" id="actualPassword" name="actualPassword">
+                </div>
+                <div class="input-field-component">
+                    <label for="newPassword">Nouveau mot de passe</label>
+                    <input type="password" id="newPassword" name="newPassword">
+                </div>
+                <div class="input-field-component">
+                    <label for="repeatNewPassword">Confirmer le nouveau mot de passe</label>
+                    <input type="password" id="repeatNewPassword" name="repeatNewPassword">
+                </div>
+            </div>
+        </div>
+        <!-- EndGroup • Mot de passe -->
+
+        <!-- Group • Réseaux sociaux -->
+        <div class="settingsGroup settingsGroup__social">
+            <div class="settingsGroup__header">
+                <h2>Réseaux Sociaux</h2>
+                <div class="collapsible-circle collapsible--close">
+                    –
+                </div>
+            </div>
+            <div class="settingsGroup__content">
+                <div class="input-field-component input-social__facebook">
+                    <label for="facebook">
+                        <svg viewBox="0 0 14 26">
+                            <path d="M8.7004 26.0002V14.3826H12.5999L13.1837 9.85502H8.70029V6.96433C8.70029 5.65348 9.06425 4.76021 10.9441 4.76021L13.3415 4.75909V0.709634C12.9269 0.654557 11.5036 0.53125 9.84804 0.53125C6.39129 0.53125 4.02474 2.64118 4.02474 6.51607V9.85502H0.115234V14.3826H4.02474V26.0001H8.7004V26.0002Z"/>
+                        </svg>
+                        <span>https://facebook.com/</span>
+                    </label>
+                    <input type="text" id="facebook" name="facebook">
+                </div>
+
+                <div class="input-field-component input-social__twitter">
+                    <label for="twitter">
+                        <svg viewBox="0 0 20 16">
+                            <path d="M19.6184 2.03305C18.9108 2.34701 18.1509 2.55925 17.3519 2.65465C18.1674 2.16634 18.7921 1.39256 19.087 0.471624C18.3124 0.931698 17.4647 1.25559 16.5806 1.42923C15.8612 0.662372 14.8353 0.183594 13.7003 0.183594C11.5217 0.183594 9.75483 1.94972 9.75483 4.12959C9.75483 4.43845 9.78962 4.73977 9.85649 5.02908C6.57692 4.86425 3.66937 3.2933 1.72319 0.906242C1.38336 1.48923 1.18884 2.16706 1.18884 2.89027C1.18884 4.25911 1.88556 5.46685 2.94422 6.17432C2.31751 6.1549 1.70456 5.98574 1.1566 5.68098V5.73084C1.1566 7.6429 2.51658 9.23723 4.32188 9.59982C3.99025 9.69069 3.64222 9.73816 3.28217 9.73816C3.0276 9.73816 2.78062 9.71407 2.53935 9.66869C3.0415 11.2359 4.49882 12.3766 6.22507 12.4089C4.87456 13.4675 3.17286 14.0986 1.32463 14.0986C1.00629 14.0986 0.691675 14.0796 0.382812 14.0424C2.12938 15.1623 4.20315 15.8161 6.43166 15.8161C13.6895 15.8161 17.6589 9.80325 17.6589 4.58886C17.6589 4.41767 17.6551 4.24775 17.6469 4.07845C18.4202 3.51907 19.0878 2.82646 19.6184 2.03305Z"/>
+                        </svg>
+                        <span>https://twitter.com/</span>
+                    </label>
+                    <input type="text" id="twitter" name="twitter">
+                </div>
+
+                <div class="input-field-component input-social__instagram">
+                    <label for="instagram">
+                        <svg viewBox="0 0 30 30">
+                            <path d="M7.60722 29.8939C5.8231 29.8128 4.85392 29.5159 4.20929 29.2644C3.35513 28.9319 2.74616 28.536 2.10509 27.8958C1.46402 27.2556 1.06726 26.6467 0.73647 25.7925C0.485036 25.1479 0.18813 24.1787 0.106993 22.3946C0.0178322 20.466 0 19.8874 0 15.0013C0 10.1153 0.0196154 9.53755 0.106102 7.60722C0.187238 5.8231 0.485927 4.85571 0.735578 4.20929C1.06815 3.35513 1.46492 2.74616 2.1042 2.1042C2.74438 1.46402 3.35334 1.06637 4.2084 0.735578C4.85303 0.484144 5.82221 0.187238 7.60632 0.106102C9.53577 0.0178322 10.1153 0 14.9996 0C19.8856 0 20.4633 0.0196154 22.3937 0.106102C24.1778 0.187238 25.1452 0.485927 25.7916 0.735578C26.6458 1.06637 27.2547 1.46402 27.8958 2.1042C28.5369 2.74438 28.9319 3.35424 29.2644 4.2084C29.5159 4.85303 29.8128 5.82221 29.8939 7.60632C29.9822 9.53666 30 10.1144 30 15.0004C30 19.8847 29.9822 20.4642 29.8939 22.3946C29.8128 24.1787 29.5141 25.1479 29.2644 25.7925C28.9319 26.6467 28.536 27.2556 27.8958 27.8958C27.2556 28.536 26.6458 28.9319 25.7916 29.2644C25.147 29.5159 24.1778 29.8128 22.3937 29.8939C20.4651 29.9822 19.8856 30 14.9996 30C10.1153 30 9.53577 29.9831 7.60722 29.8939Z" fill="url(#paint0_radial)"/>
+                            <path d="M7.60722 29.8939C5.8231 29.8128 4.85392 29.5159 4.20929 29.2644C3.35513 28.9319 2.74616 28.536 2.10509 27.8958C1.46402 27.2556 1.06726 26.6467 0.73647 25.7925C0.485036 25.1479 0.18813 24.1787 0.106993 22.3946C0.0178322 20.466 0 19.8874 0 15.0013C0 10.1153 0.0196154 9.53755 0.106102 7.60722C0.187238 5.8231 0.485927 4.85571 0.735578 4.20929C1.06815 3.35513 1.46492 2.74616 2.1042 2.1042C2.74438 1.46402 3.35334 1.06637 4.2084 0.735578C4.85303 0.484144 5.82221 0.187238 7.60632 0.106102C9.53577 0.0178322 10.1153 0 14.9996 0C19.8856 0 20.4633 0.0196154 22.3937 0.106102C24.1778 0.187238 25.1452 0.485927 25.7916 0.735578C26.6458 1.06637 27.2547 1.46402 27.8958 2.1042C28.5369 2.74438 28.9319 3.35424 29.2644 4.2084C29.5159 4.85303 29.8128 5.82221 29.8939 7.60632C29.9822 9.53666 30 10.1144 30 15.0004C30 19.8847 29.9822 20.4642 29.8939 22.3946C29.8128 24.1787 29.5141 25.1479 29.2644 25.7925C28.9319 26.6467 28.536 27.2556 27.8958 27.8958C27.2556 28.536 26.6458 28.9319 25.7916 29.2644C25.147 29.5159 24.1778 29.8128 22.3937 29.8939C20.4651 29.9822 19.8856 30 14.9996 30C10.1153 30 9.53577 29.9831 7.60722 29.8939Z" fill="url(#paint1_radial)"/>
+                            <path d="M11.3174 15.065C11.3174 13.0134 12.9801 11.3497 15.0318 11.3497C17.0835 11.3497 18.7472 13.0134 18.7472 15.065C18.7472 17.1167 17.0835 18.7804 15.0318 18.7804C12.9801 18.7804 11.3174 17.1167 11.3174 15.065ZM9.30895 15.065C9.30895 18.2258 11.8711 20.7879 15.0318 20.7879C18.1926 20.7879 20.7547 18.2258 20.7547 15.065C20.7547 11.9043 18.1926 9.34216 15.0318 9.34216C11.8711 9.34216 9.30904 11.9041 9.30904 15.065H9.30895ZM19.6439 9.11524C19.6438 9.37976 19.7222 9.63837 19.869 9.85836C20.0159 10.0784 20.2247 10.2499 20.4691 10.3512C20.7134 10.4525 20.9823 10.4791 21.2417 10.4276C21.5012 10.3761 21.7396 10.2488 21.9267 10.0619C22.1138 9.87489 22.2413 9.63663 22.293 9.37722C22.3447 9.11781 22.3183 8.84889 22.2172 8.60447C22.116 8.36005 21.9447 8.1511 21.7248 8.00406C21.5049 7.85701 21.2464 7.77847 20.9819 7.77836H20.9814C20.6268 7.77853 20.2868 7.91941 20.036 8.17008C19.7853 8.42074 19.6442 8.76068 19.6439 9.11524ZM10.5292 24.137C9.4426 24.0875 8.852 23.9065 8.45951 23.7536C7.93917 23.551 7.5679 23.3098 7.17756 22.92C6.78721 22.5301 6.54559 22.1592 6.3439 21.6389C6.1909 21.2466 6.00991 20.6558 5.96051 19.5692C5.90648 18.3944 5.89569 18.0415 5.89569 15.0652C5.89569 12.0889 5.90737 11.737 5.96051 10.5613C6.01 9.47465 6.19233 8.88503 6.3439 8.49156C6.54648 7.97122 6.78775 7.59995 7.17756 7.20961C7.56737 6.81926 7.93828 6.57763 8.45951 6.37595C8.85182 6.22295 9.4426 6.04195 10.5292 5.99256C11.704 5.93853 12.0569 5.92774 15.0318 5.92774C18.0068 5.92774 18.36 5.93924 19.5358 5.99274C20.6224 6.04222 21.212 6.22456 21.6055 6.37613C22.1258 6.57781 22.4971 6.81997 22.8874 7.20978C23.2778 7.5996 23.5185 7.9714 23.7211 8.49174C23.8741 8.88405 24.0551 9.47483 24.1045 10.5614C24.1585 11.7372 24.1693 12.0891 24.1693 15.0654C24.1693 18.0417 24.1585 18.3936 24.1045 19.5694C24.055 20.656 23.8731 21.2466 23.7211 21.6391C23.5185 22.1594 23.2772 22.5307 22.8874 22.9201C22.4976 23.3096 22.1258 23.5512 21.6055 23.7538C21.2132 23.9068 20.6224 24.0878 19.5358 24.1372C18.361 24.1912 18.0081 24.202 15.0318 24.202C12.0555 24.202 11.7036 24.1912 10.5292 24.1372V24.137ZM10.4369 3.98742C9.25046 4.04145 8.43972 4.22958 7.73169 4.50509C6.99888 4.7896 6.3777 5.1713 5.7574 5.79061C5.13711 6.40992 4.75639 7.03119 4.47188 7.7649C4.19637 8.47337 4.00825 9.28367 3.95421 10.4701C3.89929 11.6585 3.88672 12.0384 3.88672 15.065C3.88672 18.0917 3.89929 18.4716 3.95421 19.66C4.00825 20.8465 4.19637 21.6567 4.47188 22.3652C4.75639 23.098 5.1372 23.7204 5.7574 24.3395C6.37761 24.9585 6.99799 25.3397 7.73169 25.625C8.44106 25.9005 9.25046 26.0886 10.4369 26.1427C11.6259 26.1967 12.0052 26.2102 15.0318 26.2102C18.0585 26.2102 18.4384 26.1976 19.6267 26.1427C20.8133 26.0886 21.6235 25.9005 22.332 25.625C23.0648 25.3397 23.686 24.9588 24.3063 24.3395C24.9265 23.7202 25.3065 23.098 25.5918 22.3652C25.8673 21.6567 26.0563 20.8464 26.1094 19.66C26.1635 18.4707 26.176 18.0917 26.176 15.065C26.176 12.0384 26.1635 11.6585 26.1094 10.4701C26.0554 9.28358 25.8673 8.47293 25.5918 7.7649C25.3065 7.03209 24.9256 6.4109 24.3063 5.79061C23.6869 5.17032 23.0648 4.7896 22.3329 4.50509C21.6235 4.22958 20.8132 4.04056 19.6276 3.98742C18.4391 3.93312 18.0594 3.91992 15.0332 3.91992C12.007 3.91992 11.6263 3.93249 10.4374 3.98742" fill="white"/>
+                            <defs>
+                                <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.94157 29.3428) scale(38.0889)">
+                                    <stop offset="0.09" stop-color="#FA8F21"/>
+                                    <stop offset="0.78" stop-color="#D82D7E"/>
+                                </radialGradient>
+                                <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(20.78 28.3795) scale(33.5186)">
+                                    <stop offset="0.64" stop-color="#8C3AAA" stop-opacity="0"/>
+                                    <stop offset="1" stop-color="#8C3AAA"/>
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                        <span>https://instagram.com/</span>
+                    </label>
+                    <input type="text" id="instagram" name="instagram">
+                </div>
+
+                <div class="input-field-component input-social__linkedin">
+                    <label for="linkedin">
+                        <svg viewBox="0 0 30 30">
+                            <rect width="30" height="30" rx="2" fill="url(#paint0_linear)"/>
+                            <circle cx="15" cy="15" r="13" fill="white"/>
+                            <path d="M15 0C6.71566 0 0 6.71567 0 15C0 23.2843 6.71566 30 15 30C23.2843 30 30 23.2843 30 15C29.9999 6.71567 23.2842 0 15 0ZM10.9979 22.2518H7.70455V11.6118H10.9979V22.2518ZM9.33556 10.2184C8.25997 10.2184 7.38802 9.33931 7.38802 8.25511C7.38802 7.17078 8.26009 6.29178 9.33556 6.29178C10.411 6.29178 11.283 7.17078 11.283 8.25511C11.283 9.33937 10.4111 10.2184 9.33556 10.2184ZM23.3399 22.2518H20.0625V16.6667C20.0625 15.1348 19.4807 14.2797 18.2694 14.2797C16.9511 14.2797 16.2624 15.1703 16.2624 16.6667V22.2518H13.1037V11.6118H16.2624V13.0448C16.2624 13.0448 17.2126 11.2872 19.4687 11.2872C21.7249 11.2872 23.34 12.6648 23.34 15.5147L23.3399 22.2518Z" fill="url(#paint1_linear)"/>
+                            <defs>
+                                <linearGradient id="paint0_linear" x1="0" y1="0" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2489BE"/>
+                                    <stop offset="1" stop-color="#0575B3"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear" x1="4.39338" y1="4.39339" x2="25.6066" y2="25.6066" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2489BE"/>
+                                    <stop offset="1" stop-color="#0575B3"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>https://linkedin.com/</span>
+                    </label>
+                    <input type="text" id="linkedin" name="linkedin">
+                </div>
+            </div>
+        </div>
+        <!-- EndGroup • Réseaux sociaux -->
+
+        <!-- Group • Notifications -->
+        <div class="settingsGroup settingsGroup__notifications">
+            <div class="settingsGroup__header">
+                <h2>Notifications</h2>
+                <div class="collapsible-circle collapsible--close">
+                    –
+                </div>
+            </div>
+            <div class="settingsGroup__content">
+                <div class="input-field-component input-field-component__checkbox">
+                    <label for="allowNewsletter">Je souhaite recevoir la newsletter hebdomadaire de Woazoo</label>
+                    <input type="checkbox" id="allowNewsletter" name="allowNewsletter">
+                </div>
+                <div class="input-field-component input-field-component__checkbox">
+                    <label for="allowCommercial">Je souhaite recevoir des offres commerciales de la part des partenaires de Woazoo</label>
+                    <input type="checkbox" id="allowCommercial" name="allowCommercial">
+                </div>
+            </div>
+        </div>
+        <!-- EndGroup • Notifications -->
+
+        <!-- Group • Espace sensible -->
+        <div class="settingsGroup settingsGroup__danger">
+            <div class="settingsGroup__header">
+                <h2>Espace sensible</h2>
+                <div class="collapsible-circle collapsible--close">
+                    –
+                </div>
+            </div>
+            <div class="settingsGroup__content">
+                <div class="dangerSettings">
+                    <h3>Désactiver mon profil</h3>
+                    <p>Votre profil sera invisible des autres membres de Woazoo mais vous pourrez toujours accéder à votre compte.</p>
+                    <a href="#!" class="secondaryButton dangerButton">Désactiver mon profil</a>
+                </div>
+                <div class="dangerSettings">
+                    <h3>Supprimer mon profil</h3>
+                    <p>Toutes les données de votre profil seront supprimées de nos serveurs. Attention, cette action est irréversible !</p>
+                    <a href="#!" class="secondaryButton dangerButton">Supprimer mon profil</a>
+                </div>
+            </div>
+        </div>
+        <!-- EndGroup • Espace sensible -->
+
+    </form>
+    <!-- end • SETTINGS Section -->
+{% endblock %}
+{% block scripts %}
+    <script src="../js/collapsibleForm.js"></scriptsrc>
+{% endblock %}

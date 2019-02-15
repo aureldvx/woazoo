@@ -35,7 +35,7 @@
             <p class="hero__dynamicTitleCategory hero__boldText"></p>
         </h1>
 
-        <form action="{{ path('user_search') }}" method="get" class="hero__searchForm">
+        <form action="{#{{ path('user_simple_search') }}#}" method="get" class="hero__searchForm">
             <div class="hero__searchForm__inputField">
                 <input type="text" name="homepageSearch" id="homepageSearch" max="255" placeholder="Effectuez une recherche...">
                 <button type="submit">
@@ -78,7 +78,7 @@
                     </div>
                     <h3 class="b-singleBlog__title">Le nom du blog</h3>
                     <p class="b-singleBlog__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut deserunt, doloribus dolorum eius eos eveniet ipsum minus molestias nam, nesciunt omnis possimus quasi quod saepe, ullam velit veritatis vero.</p>
-                    <a href="" class="primaryButton b-singleBlog__link">Découvrir le blog</a>
+                    <a href="{{ path('blogger_preview') }}" class="primaryButton b-singleBlog__link">Découvrir le blog</a>
                     <div class="b-userActions">
                         <div class="b-userActions__love b-userActions__element">
                             <svg viewBox="0 0 512 512">
@@ -106,7 +106,7 @@
                     </div>
                     <h3 class="b-singleBlog__title">Le nom du blog</h3>
                     <p class="b-singleBlog__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut deserunt, doloribus dolorum eius eos eveniet ipsum minus molestias nam, nesciunt omnis possimus quasi quod saepe, ullam velit veritatis vero.</p>
-                    <a href="" class="primaryButton b-singleBlog__link">Découvrir le blog</a>
+                    <a href="{{ path('blogger_preview') }}" class="primaryButton b-singleBlog__link">Découvrir le blog</a>
                     <div class="b-userActions">
                         <div class="b-userActions__love b-userActions__element">
                             <svg viewBox="0 0 512 512">
@@ -140,14 +140,14 @@
                     <header class="a-singleArticle__header">
                         <div class="a-singleArticle__idBlog">
                             <div class="a-idBlog__img">
-                                <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                                <img src="../img/img1.jpg" alt="illu">
                             </div>
                             <h3 class="a-idBlog__title">Nom du blog</h3>
                         </div>
                         <span class="a-singleArticle__publicationDate"><time datetime="2019-01-14">3j</time></span>
                     </header>
                     <div class="a-singleArticle__image">
-                        <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                        <img src="../img/img1.jpg" alt="illu">
                     </div>
                     <h3 class="a-singleArticle__title">Titre de l'article</h3>
                     <p class="a-singleArticle__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -179,14 +179,14 @@
                     <header class="a-singleArticle__header">
                         <div class="a-singleArticle__idBlog">
                             <div class="a-idBlog__img">
-                                <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                                <img src="../img/img1.jpg" alt="illu">
                             </div>
                             <h3 class="a-idBlog__title">Nom du blog</h3>
                         </div>
                         <span class="a-singleArticle__publicationDate"><time datetime="2019-01-14">3j</time></span>
                     </header>
                     <div class="a-singleArticle__image">
-                        <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                        <img src="../img/img1.jpg" alt="illu">
                     </div>
                     <h3 class="a-singleArticle__title">Titre de l'article</h3>
                     <p class="a-singleArticle__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -224,7 +224,7 @@
                 {% for i in 0..7 %}
                     <div href="#!" class="c-categoriesContainer__singleCategory">
                         <a href="#!" class="c-singleCategory__image">
-                            <img src="../../src/Repository/img/img1.jpg" alt="illu">
+                            <img src="../img/img1.jpg" alt="illu">
                         </a>
                         <h3 class="c-singleCategory__title"><a href="#!">Nom de la Categorie</a></h3>                            
                         <span class="c-singleCategory__number">112 articles</span>                                                                        

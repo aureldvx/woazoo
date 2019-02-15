@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+
+/*=============================================
+=            Styles distants                  =
+=============================================*/
+
+//@import 'dist/_bulma.scss';
+//@import 'dist/_materialize.scss';
+
+
+/*=============================================
+=            Styles locaux                    =
+=============================================*/
+
+/*----------  Paramètres  ----------*/
+
+@import 'guidelines/fonts';
+@import 'guidelines/colors';
+@import 'guidelines/functions';
+
+
+/*----------  Layouts  ----------*/
+
+@import 'components/layout';
+
+
+/*----------  Pages  ----------*/
+
+@import "components/accueil";
+@import "components/userDashboard";

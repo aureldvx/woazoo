@@ -1,0 +1,236 @@
+{% extends "base.html.twig" %}
+{# META TAGS • Général #}
+{% block metaTitle %}{% endblock %}
+{% block metaDescription %}{% endblock %}
+{# META TAGS • Facebook #}
+{% block metaFacebookUrl %}{% endblock %}
+{% block metaFacebookTitle %}{% endblock %}
+{% block metaFacebookDescription %}{% endblock %}
+{% block metaFacebookImage %}{% endblock %}
+{# META TAGS • Twitter #}
+{% block metaTwitterCard %}{% endblock %}
+{# default : summary_large_image #}
+{% block metaTwitterUrl %}{% endblock %}
+{% block metaTwitterTitle %}{% endblock %}
+{% block metaTwitterDescription %}{% endblock %}
+{% block metaTwitterImage %}{% endblock %}
+{# Stylesheets #}
+{% block stylesheets %}<link rel="stylesheet" href="../css/connexion.css">{% endblock %}
+{# Page Title #}
+{% block pageTitle %}Conexion - Inscription{% endblock %}
+{# Class du body #}
+{% block bodyName %}connexion{% endblock %}
+{# BODY #}
+{% block body %}
+    <!-- start • HERO Section -->
+    <section class="hero">
+        <h1 class="hero__mainTitle">
+            <p><span class="hero__boldText">Woazoo. Gratuit. Pour toujours.</span></p>
+        </h1>
+        <a href="#fonctionnalites" class="secondaryButton">Voir les fonctionnalités</a>
+    </section>
+    <!-- end • HERO Section -->
+
+    <!-- start • INSCRIPTION Form -->
+    <section class="c-formsContainer">
+        <form action="connexion.html.twig" method="post" role="form" class="c-form c-formInscription">
+            <h2 class="c-formTitle">Nouveau membre</h2>
+            <span class="c-formSubtitle">Inscrivez-vous</span>
+            <div class="connexionApis">
+                <a href="#!" class="connexionApis__buttons connexionApis__facebook">
+                    <svg viewBox="0 0 14 26">
+                        <path d="M8.7004 26.0002V14.3826H12.5999L13.1837 9.85502H8.70029V6.96433C8.70029 5.65348 9.06425 4.76021 10.9441 4.76021L13.3415 4.75909V0.709634C12.9269 0.654557 11.5036 0.53125 9.84804 0.53125C6.39129 0.53125 4.02474 2.64118 4.02474 6.51607V9.85502H0.115234V14.3826H4.02474V26.0001H8.7004V26.0002Z"/>
+                    </svg>
+                    Inscrivez-vous avec Facebook
+                </a>
+                <a href="#!" class="connexionApis__buttons connexionApis__google">
+                    <svg viewBox="0 0 18 19">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.446 9.25494C17.446 8.61677 17.3911 8.00314 17.2892 7.41406H9.16602V10.8954H13.8078C13.6079 12.0203 13.0002 12.9735 12.0868 13.6117V15.8698H14.8742C16.5051 14.303 17.446 11.9958 17.446 9.25494Z" fill="#4285F4"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16659 18.0497C11.4953 18.0497 13.4477 17.2438 14.8748 15.8692L12.0873 13.6111C11.315 14.1511 10.327 14.4702 9.16659 14.4702C6.92018 14.4702 5.01876 12.887 4.34052 10.7598H1.45898V13.0916C2.87819 16.0329 5.79501 18.0497 9.16659 18.0497Z" fill="#34A853"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.33993 10.7596C4.16743 10.2196 4.06942 9.64276 4.06942 9.04959C4.06942 8.45641 4.16743 7.8796 4.33993 7.33961V5.00781H1.4584C0.874253 6.2228 0.541016 7.59733 0.541016 9.04959C0.541016 10.5018 0.874253 11.8764 1.4584 13.0914L4.33993 10.7596Z" fill="#FBBC05"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1666 3.62835C10.4329 3.62835 11.5698 4.08244 12.4637 4.97425L14.9375 2.3929C13.4438 0.940641 11.4914 0.0488281 9.1666 0.0488281C5.79501 0.0488281 2.87819 2.06563 1.45898 5.00698L4.34052 7.33878C5.01876 5.21152 6.92018 3.62835 9.1666 3.62835Z" fill="#EA4335"/>
+                    </svg>
+                    Inscrivez-vous avec Google
+                </a>
+                <a href="#!" class="connexionApis__buttons connexionApis__twitter">
+                    <svg viewBox="0 0 20 16">
+                        <path d="M19.6184 2.03305C18.9108 2.34701 18.1509 2.55925 17.3519 2.65465C18.1674 2.16634 18.7921 1.39256 19.087 0.471624C18.3124 0.931698 17.4647 1.25559 16.5806 1.42923C15.8612 0.662372 14.8353 0.183594 13.7003 0.183594C11.5217 0.183594 9.75483 1.94972 9.75483 4.12959C9.75483 4.43845 9.78962 4.73977 9.85649 5.02908C6.57692 4.86425 3.66937 3.2933 1.72319 0.906242C1.38336 1.48923 1.18884 2.16706 1.18884 2.89027C1.18884 4.25911 1.88556 5.46685 2.94422 6.17432C2.31751 6.1549 1.70456 5.98574 1.1566 5.68098V5.73084C1.1566 7.6429 2.51658 9.23723 4.32188 9.59982C3.99025 9.69069 3.64222 9.73816 3.28217 9.73816C3.0276 9.73816 2.78062 9.71407 2.53935 9.66869C3.0415 11.2359 4.49882 12.3766 6.22507 12.4089C4.87456 13.4675 3.17286 14.0986 1.32463 14.0986C1.00629 14.0986 0.691675 14.0796 0.382812 14.0424C2.12938 15.1623 4.20315 15.8161 6.43166 15.8161C13.6895 15.8161 17.6589 9.80325 17.6589 4.58886C17.6589 4.41767 17.6551 4.24775 17.6469 4.07845C18.4202 3.51907 19.0878 2.82646 19.6184 2.03305Z"/>
+                    </svg>
+                    Inscrivez-vous avec Twitter
+                </a>
+            </div>
+            <span class="c-formSubtitle">OU</span>
+            <div class="c-formMainContainer">
+                <div class="input-field-component">
+                    <label for="newNom">Nom</label>
+                    <input type="text" id="newNom" name="newNom" placeholder="Doe">
+                </div>
+
+                <div class="input-field-component">
+                    <label for="newPrenom">Prénom</label>
+                    <input type="text" id="newPrenom" name="newPrenom" placeholder="John">
+                </div>
+
+                <div class="input-field-component">
+                    <label for="newMail">Email</label>
+                    <input type="text" id="newMail" name="newMail" placeholder="john.doe@email.me">
+                </div>
+
+                <div class="input-field-component">
+                    <label for="newPassword">Mot de passe</label>
+                    <input type="text" id="newPassword" name="newPassword" placeholder="••••••••••">
+                </div>
+
+                <div class="input-field-component">
+                    <label for="repeatNewPassword">Répéter le mot de passe</label>
+                    <input type="text" id="repeatNewPassword" name="repeatNewPassword" placeholder="••••••••••">
+                </div>
+
+                <div class="input-field-component">
+                    <label for="">Sexe <span class="optional-field">(Optionnel)</span></label>
+                    <div class="input-field-component__radio">
+                        <input type="radio" id="homme" name="sexe" value="homme">
+                        <label for="homme">Homme</label>
+                    </div>
+                    <div class="input-field-component__radio">
+                        <input type="radio" id="femme" name="sexe" value="femme">
+                        <label for="femme">Femme</label>
+                    </div>
+                    <div class="input-field-component__radio">
+                        <input type="radio" id="autre" name="sexe" value="autre">
+                        <label for="autre">Ne pas préciser</label>
+                    </div>
+                </div>
+
+                <div class="input-field-component">
+                    <label for="newVille">Ville <span class="optional-field">(Optionnel)</span></label>
+                    <input type="text" id="newVille" name="newVille" placeholder="Bordeaux">
+                </div>
+
+                <div class="input-field-component">
+                    <label for="newPseudo">Pseudo <span class="optional-field">(Optionnel)</span></label>
+                    <input type="text" id="newPseudo" name="newPseudo" placeholder="john&doe">
+                    <span class="inform-message">Par défaut, votre pseudo est défini sur prenom_nom.</span>
+                </div>
+            </div>
+            <button type="submit" class="primaryButton">Valider l'inscription</button>
+        </form>
+    <!-- end • INSCRIPTION Form -->
+
+    <!-- start • CONNEXION Form -->
+        <div class="c-rightPart">
+            <form action="connexion.html.twig" method="post" role="form" class="c-form c-formConnexion">
+                <h2 class="c-formTitle">Déjà membre</h2>
+                <span class="c-formSubtitle">Connectez-vous</span>
+                <div class="connexionApis">
+                    <a href="#!" class="connexionApis__buttons connexionApis__facebook">
+                        <svg viewBox="0 0 14 26">
+                            <path d="M8.7004 26.0002V14.3826H12.5999L13.1837 9.85502H8.70029V6.96433C8.70029 5.65348 9.06425 4.76021 10.9441 4.76021L13.3415 4.75909V0.709634C12.9269 0.654557 11.5036 0.53125 9.84804 0.53125C6.39129 0.53125 4.02474 2.64118 4.02474 6.51607V9.85502H0.115234V14.3826H4.02474V26.0001H8.7004V26.0002Z"/>
+                        </svg>
+                        Connectez-vous avec Facebook
+                    </a>
+                    <a href="#!" class="connexionApis__buttons connexionApis__google">
+                        <svg viewBox="0 0 18 19">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.446 9.25494C17.446 8.61677 17.3911 8.00314 17.2892 7.41406H9.16602V10.8954H13.8078C13.6079 12.0203 13.0002 12.9735 12.0868 13.6117V15.8698H14.8742C16.5051 14.303 17.446 11.9958 17.446 9.25494Z" fill="#4285F4"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16659 18.0497C11.4953 18.0497 13.4477 17.2438 14.8748 15.8692L12.0873 13.6111C11.315 14.1511 10.327 14.4702 9.16659 14.4702C6.92018 14.4702 5.01876 12.887 4.34052 10.7598H1.45898V13.0916C2.87819 16.0329 5.79501 18.0497 9.16659 18.0497Z" fill="#34A853"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.33993 10.7596C4.16743 10.2196 4.06942 9.64276 4.06942 9.04959C4.06942 8.45641 4.16743 7.8796 4.33993 7.33961V5.00781H1.4584C0.874253 6.2228 0.541016 7.59733 0.541016 9.04959C0.541016 10.5018 0.874253 11.8764 1.4584 13.0914L4.33993 10.7596Z" fill="#FBBC05"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1666 3.62835C10.4329 3.62835 11.5698 4.08244 12.4637 4.97425L14.9375 2.3929C13.4438 0.940641 11.4914 0.0488281 9.1666 0.0488281C5.79501 0.0488281 2.87819 2.06563 1.45898 5.00698L4.34052 7.33878C5.01876 5.21152 6.92018 3.62835 9.1666 3.62835Z" fill="#EA4335"/>
+                        </svg>
+                        Connectez-vous avec Google
+                    </a>
+                    <a href="#!" class="connexionApis__buttons connexionApis__twitter">
+                        <svg viewBox="0 0 20 16">
+                            <path d="M19.6184 2.03305C18.9108 2.34701 18.1509 2.55925 17.3519 2.65465C18.1674 2.16634 18.7921 1.39256 19.087 0.471624C18.3124 0.931698 17.4647 1.25559 16.5806 1.42923C15.8612 0.662372 14.8353 0.183594 13.7003 0.183594C11.5217 0.183594 9.75483 1.94972 9.75483 4.12959C9.75483 4.43845 9.78962 4.73977 9.85649 5.02908C6.57692 4.86425 3.66937 3.2933 1.72319 0.906242C1.38336 1.48923 1.18884 2.16706 1.18884 2.89027C1.18884 4.25911 1.88556 5.46685 2.94422 6.17432C2.31751 6.1549 1.70456 5.98574 1.1566 5.68098V5.73084C1.1566 7.6429 2.51658 9.23723 4.32188 9.59982C3.99025 9.69069 3.64222 9.73816 3.28217 9.73816C3.0276 9.73816 2.78062 9.71407 2.53935 9.66869C3.0415 11.2359 4.49882 12.3766 6.22507 12.4089C4.87456 13.4675 3.17286 14.0986 1.32463 14.0986C1.00629 14.0986 0.691675 14.0796 0.382812 14.0424C2.12938 15.1623 4.20315 15.8161 6.43166 15.8161C13.6895 15.8161 17.6589 9.80325 17.6589 4.58886C17.6589 4.41767 17.6551 4.24775 17.6469 4.07845C18.4202 3.51907 19.0878 2.82646 19.6184 2.03305Z"/>
+                        </svg>
+                        Connectez-vous avec Twitter
+                    </a>
+                </div>
+                <span class="c-formSubtitle">OU</span>
+                <div class="c-formMainContainer">
+                    <div class="input-field-component">
+                        <label for="newMail">Email</label>
+                        <input type="text" id="newMail" name="newMail" placeholder="john.doe@email.me">
+                    </div>
+
+                    <div class="input-field-component">
+                        <label for="newPassword">Mot de passe</label>
+                        <input type="text" id="newPassword" name="newPassword" placeholder="••••••••••">
+                    </div>
+                </div>
+                <button type="submit" class="primaryButton">Connexion</button>
+                <a href="{{ path('mot_de_passe_oublie') }}" class="secondaryButton mdpOublieButton">Mot de passe oublié</a>
+            </form>
+    <!-- end • CONNEXION Form -->
+
+    <!-- start • PROFESSIONNELS Section -->
+            <section class="c-professionnels">
+                <p>Vous êtes professionnel et souhaitez sponsoriser des articles de notre communauté ?</p>
+                <div class="c-proAvantages">
+                    <div class="c-avantages">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M362.6 192.9L345 174.8c-.7-.8-1.8-1.2-2.8-1.2-1.1 0-2.1.4-2.8 1.2l-122 122.9-44.4-44.4c-.8-.8-1.8-1.2-2.8-1.2-1 0-2 .4-2.8 1.2l-17.8 17.8c-1.6 1.6-1.6 4.1 0 5.7l56 56c3.6 3.6 8 5.7 11.7 5.7 5.3 0 9.9-3.9 11.6-5.5h.1l133.7-134.4c1.4-1.7 1.4-4.2-.1-5.7z"/>
+                            <path d="M256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256s-18.7 93.3-52.7 127.3S304.1 436 256 436c-48.1 0-93.3-18.7-127.3-52.7S76 304.1 76 256s18.7-93.3 52.7-127.3S207.9 76 256 76m0-28C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"/>
+                        </svg>
+                        <span>Avantage n°1</span>
+                    </div>
+
+                    <div class="c-avantages">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M362.6 192.9L345 174.8c-.7-.8-1.8-1.2-2.8-1.2-1.1 0-2.1.4-2.8 1.2l-122 122.9-44.4-44.4c-.8-.8-1.8-1.2-2.8-1.2-1 0-2 .4-2.8 1.2l-17.8 17.8c-1.6 1.6-1.6 4.1 0 5.7l56 56c3.6 3.6 8 5.7 11.7 5.7 5.3 0 9.9-3.9 11.6-5.5h.1l133.7-134.4c1.4-1.7 1.4-4.2-.1-5.7z"/>
+                            <path d="M256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256s-18.7 93.3-52.7 127.3S304.1 436 256 436c-48.1 0-93.3-18.7-127.3-52.7S76 304.1 76 256s18.7-93.3 52.7-127.3S207.9 76 256 76m0-28C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"/>
+                        </svg>
+                        <span>Avantage n°1</span>
+                    </div>
+
+                    <div class="c-avantages">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M362.6 192.9L345 174.8c-.7-.8-1.8-1.2-2.8-1.2-1.1 0-2.1.4-2.8 1.2l-122 122.9-44.4-44.4c-.8-.8-1.8-1.2-2.8-1.2-1 0-2 .4-2.8 1.2l-17.8 17.8c-1.6 1.6-1.6 4.1 0 5.7l56 56c3.6 3.6 8 5.7 11.7 5.7 5.3 0 9.9-3.9 11.6-5.5h.1l133.7-134.4c1.4-1.7 1.4-4.2-.1-5.7z"/>
+                            <path d="M256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256s-18.7 93.3-52.7 127.3S304.1 436 256 436c-48.1 0-93.3-18.7-127.3-52.7S76 304.1 76 256s18.7-93.3 52.7-127.3S207.9 76 256 76m0-28C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"/>
+                        </svg>
+                        <span>Avantage n°1</span>
+                    </div>
+
+                    <div class="c-avantages">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M362.6 192.9L345 174.8c-.7-.8-1.8-1.2-2.8-1.2-1.1 0-2.1.4-2.8 1.2l-122 122.9-44.4-44.4c-.8-.8-1.8-1.2-2.8-1.2-1 0-2 .4-2.8 1.2l-17.8 17.8c-1.6 1.6-1.6 4.1 0 5.7l56 56c3.6 3.6 8 5.7 11.7 5.7 5.3 0 9.9-3.9 11.6-5.5h.1l133.7-134.4c1.4-1.7 1.4-4.2-.1-5.7z"/>
+                            <path d="M256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256s-18.7 93.3-52.7 127.3S304.1 436 256 436c-48.1 0-93.3-18.7-127.3-52.7S76 304.1 76 256s18.7-93.3 52.7-127.3S207.9 76 256 76m0-28C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"/>
+                        </svg>
+                        <span>Avantage n°1</span>
+                    </div>
+                </div>
+                <a href="#!" class="linkButton">Accéder à la page professionnels</a>
+            </section>
+    <!-- end • PROFESSIONNELS Section -->
+        </div>
+    </section>
+
+    <!-- start • FONCTIONNALITÉS Section -->
+    <section class="c-fonctionnalites" id="fonctionnalites">
+        <h2 class="titleGradientMultiline"><span>Les fontionnalités de Woazoo</span></h2>
+        <div class="c-singleFonctionnalite c-singleFonctionnalite1">
+            <h3>Une communauté de blogueurs passionnée</h3>
+            <img src="../img/undraw_blogging.svg" alt="illustration">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius eligendi eum, ipsa laboriosam magni maiores provident qui, quibusdam quis ratione reiciendis temporibus unde voluptas voluptatem! A doloribus modi tenetur.</p>
+        </div>
+
+        <div class="c-singleFonctionnalite c-singleFonctionnalite2">
+            <h3>Une fonctionnalité unique : la géolocalisation des articles</h3>
+            <img src="../img/undraw_map.svg" alt="illustration">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius eligendi eum, ipsa laboriosam magni maiores provident qui, quibusdam quis ratione reiciendis temporibus unde voluptas voluptatem! A doloribus modi tenetur.</p>
+        </div>
+
+        <div class="c-singleFonctionnalite c-singleFonctionnalite3">
+            <h3>Disponible partout. N'importe quand.</h3>
+            <img src="../img/undraw_in_sync.svg" alt="illustration">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius eligendi eum, ipsa laboriosam magni maiores provident qui, quibusdam quis ratione reiciendis temporibus unde voluptas voluptatem! A doloribus modi tenetur.</p>
+        </div>
+
+        <div class="c-singleFonctionnalite c-singleFonctionnalite4">
+            <h3>Entièrement personnalisable. Taillé pour vous.</h3>
+            <img src="../img/undraw_content.svg" alt="illustration">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius eligendi eum, ipsa laboriosam magni maiores provident qui, quibusdam quis ratione reiciendis temporibus unde voluptas voluptatem! A doloribus modi tenetur.</p>
+        </div>
+    </section>
+    <!-- end • FONCTIONNALITÉS Section -->
+{% endblock %}
+{% block scripts %}{% endblock %}

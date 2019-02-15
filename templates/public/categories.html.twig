@@ -62,7 +62,7 @@
                 </div>
             </div>
             {% for i in 0..3 %}
-                <div class="tc-container__category tc-container__secondaryTrends">
+                <div class="tc-container__category tc-container__secondaryTrends .tc-container__secondaryTrend{{ i }}">
                     <div class="tc-category__image">
                         <img src="../img/img1.jpg" alt="illustration">
                     </div>
@@ -90,59 +90,65 @@
     </section>
     <!-- end • TRENDING CATEGORIES Section -->
 
-    <!-- start • FILTER CATEGORIES Section -->
-    <section class="filterCategories">
+    <section class="allCategories">
         <h2 class="titleGradientMultiline"><span>Toutes les catégories</span></h2>
-        <form class="fc-filterResults" method="post" action="#!" role="search">
-            <h3 class="fc-filterTitle">Filtrer les résultats</h3>
-            <div class="fc-inputCategoryName">
-                <label for="CategoryName">Par nom de catégorie :</label>
-                <input type="text" id="categoryName" name="categoryName" placeholder="Tapez votre recherche ici...">
-            </div>
-            <span class="fc-tidyTitle">Trier les résultats par :</span>
-            <div class="fc-inputTidyResults">
-                <input type="radio" id="tidyAlphabet" name="tidyResults" value="alphabet">
-                <label for="tidyAlphabet">Par ordre alphabétique</label>
-            </div>
-            <div class="fc-inputTidyResults">
-                <input type="radio" id="tidyPopularity" name="tidyResults" value="popular">
-                <label for="tidyPopularity">Par popularité</label>
-            </div>
-            <button class="fc-submitFilters primaryButton" type="submit">Filtrer</button>
-        </form>
-    </section>
-    <!-- end • FILTER CATEGORIES Section -->
+        <div class="allCategoriesContainer">
+            <!-- start • FILTER CATEGORIES Section -->
+            <section class="filterCategories">
+                <form class="fc-filterResults" method="post" action="#!" role="search">
+                    <h3 class="fc-filterTitle">Filtrer les résultats</h3>
+                    <div class="fc-inputCategoryName">
+                        <label for="CategoryName">Par nom de catégorie :</label>
+                        <input type="text" id="categoryName" name="categoryName" placeholder="Tapez votre recherche ici...">
+                    </div>
+                    <span class="fc-tidyTitle">Trier les résultats par :</span>
+                    <div class="fc-inputTidyResults">
+                        <input type="radio" id="tidyAlphabet" name="tidyResults" value="alphabet">
+                        <label for="tidyAlphabet">Par ordre alphabétique</label>
+                    </div>
+                    <div class="fc-inputTidyResults">
+                        <input type="radio" id="tidyPopularity" name="tidyResults" value="popular">
+                        <label for="tidyPopularity">Par popularité</label>
+                    </div>
+                    <button class="fc-submitFilters primaryButton" type="submit">Filtrer</button>
+                </form>
+            </section>
+            <!-- end • FILTER CATEGORIES Section -->
 
-    <!-- start • ALL CATEGORIES Section -->
-    <section class="tc-container tc-containerAll">
-        {% for i in 0..21 %}
-            <div class="tc-container__category">
-                <div class="tc-category__image">
-                    <img src="../img/img1.jpg" alt="illustration">
-                </div>
-                <h3 class="tc-category__title">Titre de la Catégorie</h3>
-                <p class="tc-category__description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dicta, dolor dolore ea eaque enim.
-                </p>
-                <span class="tc-category__numberArticles">122 articles</span>
-                <div class="userCardActions">
-                    <div class="userCardActions__love userCardActions__element">
-                        <svg viewBox="0 0 512 512">
-                            <path d="M352 56h-1c-39.7 0-74.8 21-95 52-20.2-31-55.3-52-95-52h-1c-61.9.6-112 50.9-112 113 0 37 16.2 89.5 47.8 132.7C156 384 256 456 256 456s100-72 160.2-154.3C447.8 258.5 464 206 464 169c0-62.1-50.1-112.4-112-113z"/>
-                        </svg>
-                        <span class="userCardActions__loveCount">150</span>
+            <!-- start • ALL CATEGORIES Section -->
+            <section class="tc-container tc-containerAll">
+                {% for i in 0..21 %}
+                    <div class="tc-container__category">
+                        <div class="tc-category__image">
+                            <img src="../img/img1.jpg" alt="illustration">
+                        </div>
+                        <h3 class="tc-category__title">Titre de la Catégorie</h3>
+                        <p class="tc-category__description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dicta, dolor dolore ea eaque enim.
+                        </p>
+                        <span class="tc-category__numberArticles">122 articles</span>
+                        <div class="userCardActions">
+                            <div class="userCardActions__love userCardActions__element">
+                                <svg viewBox="0 0 512 512">
+                                    <path d="M352 56h-1c-39.7 0-74.8 21-95 52-20.2-31-55.3-52-95-52h-1c-61.9.6-112 50.9-112 113 0 37 16.2 89.5 47.8 132.7C156 384 256 456 256 456s100-72 160.2-154.3C447.8 258.5 464 206 464 169c0-62.1-50.1-112.4-112-113z"/>
+                                </svg>
+                                <span class="userCardActions__loveCount">150</span>
+                            </div>
+                            <div class="userCardActions__bookmark userCardActions__element">
+                                <svg viewBox="0 0 512 512">
+                                    <path d="M128 80v380c0 3.3 3.8 5.2 6.4 3.2l116.8-92c2.9-2.1 6.8-2.1 9.6 0l116.8 92c2.6 2 6.4.1 6.4-3.2V80c0-17.7-14.3-32-32-32H160c-17.7 0-32 14.3-32 32z"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
-                    <div class="userCardActions__bookmark userCardActions__element">
-                        <svg viewBox="0 0 512 512">
-                            <path d="M128 80v380c0 3.3 3.8 5.2 6.4 3.2l116.8-92c2.9-2.1 6.8-2.1 9.6 0l116.8 92c2.6 2 6.4.1 6.4-3.2V80c0-17.7-14.3-32-32-32H160c-17.7 0-32 14.3-32 32z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+                {% endfor %}
+            </section>
+            <!-- end • ALL CATEGORIES Section -->
+        </div>
     </section>
-    <!-- end • ALL CATEGORIES Section -->
 {% endblock %}
 
 {# Scripts #}
-{% block scripts %}{% endblock %}
+{% block scripts %}
+    <script src="../js/dynamicCategoryHeight.js"></script>
+{% endblock %}
