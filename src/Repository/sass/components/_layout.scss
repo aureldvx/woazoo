@@ -185,7 +185,7 @@ h2 {
     font-weight: 700;
     text-align: center;
     padding: 5px;
-    @include addTextGradient($lightgrey, $middlegrey);
+    color: $darkblue;
     @include desktop {
         font-size: 2rem;
     }
@@ -301,7 +301,7 @@ h2 {
         cursor: pointer;
         z-index: 999;
 
-        img {
+        svg {
             height: 35px;
             width: auto;
         }

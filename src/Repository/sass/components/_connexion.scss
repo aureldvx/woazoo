@@ -9,7 +9,8 @@
             display: inline-block;
             margin: 20px auto 0 auto;
             text-align: center;
-            border-bottom: solid 1.5px $black;
+            border-bottom: solid 1.5px $green;
+            color: $green;
         }
     }
 
@@ -131,6 +132,10 @@
         }
     }
 
+    .mdpOublieButton {
+        color: $green;
+    }
+
     .c-formMainContainer {
         width: 100%;
     }
@@ -183,13 +188,13 @@
         font-family: 'Old Standard TT', serif;
         font-weight: 700;
         display: inline-block;
-        border: solid 1.5px $black;
+        border: solid 1.5px $blue;
         font-size: 0.8rem;
         text-align: center;
         padding: 5px;
         margin-top: 20px;
         text-decoration: none;
-        color: $black;
+        color: $blue;
 
         @include desktop {
             height: 45px;
@@ -250,7 +255,7 @@
             }
         }
 
-        img {
+        svg {
             @include desktop {
                 grid-area: fonctionnaliteImage;
             }
@@ -281,7 +286,7 @@
             }
         }
 
-        img {
+        svg {
             @include desktop {
                 grid-area: fonctionnaliteImage;
             }

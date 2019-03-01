@@ -1,0 +1,190 @@
+#simpleSearch {
+    .hero {
+        padding-top: 30px;
+        margin-bottom: 30px;
+
+        .hero__searchForm {
+            @include desktop {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .searchContainer {
+
+        @include desktop {
+            display: grid;
+            grid-template: auto / 1fr 1fr;
+            grid-column-gap: 50px;
+            grid-template-areas: "sResults sMap";
+        }
+    }
+
+    .s-map {
+        @include desktop {
+            grid-area: sMap;
+            margin-left: 0;
+            width: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .s-results {
+        @include desktop {
+            grid-area: sResults;
+        }
+    }
+
+    /**
+     * SINGLE ARTICLE
+     */
+
+    .u-lastArticles__singleContainer {
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 0 1px 4px #c4c4c4;
+        margin-bottom: 30px;
+
+        @include desktop {
+            display: grid;
+            grid-template: repeat(4, auto) / 150px 1fr;
+            grid-template-areas:
+                    "uArticleImage uArticleHeader"
+                    "uArticleImage uArticleContent"
+                    "uArticleImage uArticleLink"
+                    "uArticleImage uArticleFooter";
+        }
+    }
+
+    .u-lastArticle__image {
+        object-position: center;
+        overflow: hidden;
+        height: 125px;
+        border-radius: 5px 5px 0 0;
+
+        @include desktop {
+            grid-area: uArticleImage;
+            height: 10px;
+            border-radius: 5px 0 0 5px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+
+            @include desktop {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    .u-lastArticle__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 15px 0;
+        padding: 0 10px;
+
+        @include desktop {
+            grid-area: uArticleHeader;
+        }
+
+        h3 {
+            font-weight: 700;
+        }
+
+        span {
+            color: $hardgrey;
+        }
+    }
+
+    .u-lastArticle__content {
+        padding: 0 10px;
+        color: $hardgrey;
+
+        @include desktop {
+            grid-area: uArticleContent;
+        }
+    }
+
+    .u-lastArticle__linkRead {
+        margin: 20px auto;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        max-width: 300px;
+
+        @include desktop {
+            grid-area: uArticleLink;
+            margin: 20px 0 0 10px;
+        }
+    }
+
+    .u-lastArticle__footer {
+        margin-top: 15px;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: "nomBlog" "actions";
+        grid-row-gap: 5px;
+
+        @include desktop {
+            grid-area: uArticleFooter;
+            margin-top: 15px;
+            grid-template: auto / 1fr 1fr;
+            grid-template-areas: "nomBlog actions";
+        }
+
+        .u-userActions {
+            grid-area: actions;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            margin-top: 20px;
+
+            @include desktop {
+                margin-top: 0;
+            }
+        }
+
+        .u-lastArticle__linkBlog {
+            grid-area: nomBlog;
+            text-decoration: none;
+            color: $hardgrey;
+            text-align: center;
+
+            @include desktop {
+                text-align: left;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .u-userActions__element {
+        svg {
+            height: 25px;
+            fill: $grey;
+        }
+    }
+
+    .u-userActions__love {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $grey;
+
+        @include desktop {
+            flex-direction: row-reverse;
+        }
+    }
+}

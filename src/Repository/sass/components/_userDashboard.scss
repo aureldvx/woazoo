@@ -71,7 +71,7 @@
 
         @include desktop {
             grid-area: uArticleImage;
-            height: auto;
+            height: 100px;
             border-radius: 5px 0 0 5px;
         }
 
@@ -93,6 +93,14 @@
         margin: 15px 0;
         padding: 0 10px;
 
+        h3 {
+            font-weight: 700;
+        }
+
+        span {
+            color: $hardgrey;
+        }
+
         @include desktop {
             grid-area: uArticleHeader;
         }
@@ -100,6 +108,7 @@
 
     .u-lastArticle__content {
         padding: 0 10px;
+        color: $hardgrey;
 
         @include desktop {
             grid-area: uArticleContent;
@@ -150,7 +159,7 @@
         .u-lastArticle__linkBlog {
             grid-area: nomBlog;
             text-decoration: none;
-            color: $black;
+            color: $hardgrey;
             text-align: center;
             
             @include desktop {
@@ -163,6 +172,7 @@
     .u-userActions__element {
         svg {
             height: 25px;
+            fill: $grey;
         }
     }
 
@@ -170,6 +180,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: $grey;
 
         @include desktop {
             flex-direction: row-reverse;

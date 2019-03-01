@@ -42,6 +42,7 @@
             grid-area: sResults;
             overflow-y: scroll;
             height: 100%;
+            padding-right: 10px;
         }
     }
 
@@ -53,7 +54,7 @@
         background-color: $white;
         border-radius: 5px;
         box-shadow: 0 1px 4px #c4c4c4;
-        margin: 30px 0;
+        margin-bottom: 30px;
 
         @include desktop {
             display: grid;
@@ -74,7 +75,7 @@
 
         @include desktop {
             grid-area: uArticleImage;
-            height: auto;
+            height: 10px;
             border-radius: 5px 0 0 5px;
         }
 
@@ -99,10 +100,19 @@
         @include desktop {
             grid-area: uArticleHeader;
         }
+
+        h3 {
+            font-weight: 700;
+        }
+
+        span {
+            color: $hardgrey;
+        }
     }
 
     .u-lastArticle__content {
         padding: 0 10px;
+        color: $hardgrey;
 
         @include desktop {
             grid-area: uArticleContent;
@@ -153,7 +163,7 @@
         .u-lastArticle__linkBlog {
             grid-area: nomBlog;
             text-decoration: none;
-            color: $black;
+            color: $hardgrey;
             text-align: center;
 
             @include desktop {
@@ -166,6 +176,7 @@
     .u-userActions__element {
         svg {
             height: 25px;
+            fill: $grey;
         }
     }
 
@@ -173,6 +184,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: $grey;
 
         @include desktop {
             flex-direction: row-reverse;

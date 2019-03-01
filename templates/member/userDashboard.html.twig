@@ -30,7 +30,7 @@
     <!-- end • HERO Section -->
 
     <!-- start • RECHERCHE Section -->
-        <form action="{{ path('user_search') }}" method="get" class="hero__searchForm hero__searchForm--user">
+        <form action="{{ path('simple_search') }}" method="get" class="hero__searchForm hero__searchForm--user">
             <div class="hero__searchForm__inputField">
                 <input type="text" name="homepageSearch" id="homepageSearch" max="255" placeholder="Effectuez une recherche...">
                 <button type="submit">
@@ -47,7 +47,7 @@
                 {% for i in 0..2 %}
                     <a href="#!" class="h-category secondaryButton hideDesktop">
                         <div class="h-category__image">
-                            <img src="../img/img1.jpg" alt="Illustration de la catégorie">
+                            <img src="https://source.unsplash.com/random/3" alt="Illustration de la catégorie">
                         </div>
                         <span class="h-category__title">Catégorie</span>
                     </a>
@@ -73,7 +73,7 @@
                 {% for i in 0..2 %}
                     <article class="u-lastArticles__singleContainer">
                         <div class="u-lastArticle__image">
-                            <img src="../img/img1.jpg" alt="illu">
+                            <img src="https://source.unsplash.com/random/3" alt="illu">
                         </div>
 
                         <header class="u-lastArticle__header">

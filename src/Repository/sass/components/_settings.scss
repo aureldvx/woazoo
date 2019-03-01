@@ -12,7 +12,8 @@
     .secondaryButton {
         outline: 0;
         border: none;
-        border-bottom: solid 1.5px $black;
+        border-bottom: solid 1.5px $green;
+        color: $green;
         font-family: 'Old Standard TT', serif;
         text-transform: uppercase;
         font-weight: 700;

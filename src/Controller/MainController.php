@@ -76,4 +76,10 @@ class MainController extends AbstractController
     {
         return $this->render("blogger/bloggerPreview.html.twig");
     }
+
+    /* PUBLIC • Recherche simple */
+    public function simpleSearch()
+    {
+        return $this->render("public/simpleSearch.html.twig");
+    }
 }

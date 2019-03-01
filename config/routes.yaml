@@ -23,25 +23,29 @@ parametres:
     controller: App\Controller\MainController::parametres
 
 user_dashboard:
-    path:   /user/dashboard
+    path:   /user-dashboard
     controller: App\Controller\MainController::userDashboard
 
 user_search:
-    path:   /user/search
+    path:   /user-search
     controller: App\Controller\MainController::userSearch
 
 articles_recents:
-    path:   /user/derniers-articles
+    path:   /user-derniers-articles
     controller: App\Controller\MainController::userLastArticles
 
 user_collections:
-    path:   /user/collections
+    path:   /user-collections
     controller: App\Controller\MainController::userCollections
 
 blogger_dashboard:
-    path:   /blogger/dashboard
+    path:   /blogger-dashboard
     controller: App\Controller\MainController::bloggerDashboard
 
 blogger_preview:
-    path:   /blogger/preview
+    path:   /blogger-preview
     controller: App\Controller\MainController::bloggerPreview
+
+simple_search:
+    path: /simple-search
+    controller: App\Controller\MainController::simpleSearch

@@ -10,7 +10,7 @@
             width: 100vw;
             height: 150px;
             margin-left: calc((100vw / 8) * (-1));
-            background-image: url('../../img/img1.jpg');
+            background-image: url('https://source.unsplash.com/daily');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
@@ -31,7 +31,7 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-image: url('../../img/img1.jpg');
+            background-image: url('https://source.unsplash.com/weekly');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
@@ -49,6 +49,7 @@
             width: 100%;
             max-width: 1200px;
             margin: 60px auto 0 auto;
+            color: $blue;
             @include desktop {
                 margin: 120px auto 0 auto;
             }
@@ -81,6 +82,11 @@
             svg {
                 height: 30px;
                 margin-bottom: 2px;
+                fill: $green;
+            }
+
+            span {
+                color: $green;
             }
         }
     }
@@ -160,10 +166,19 @@
         justify-content: space-between;
         margin: 15px 0;
         padding: 0 10px;
+
+        h3 {
+            font-weight: 700;
+        }
+
+        span {
+            color: $hardgrey;
+        }
     }
 
     .u-lastArticle__content {
         padding: 0 10px;
+        color: $hardgrey;
     }
 
     .u-lastArticle__linkRead {
@@ -197,6 +212,11 @@
 
         svg {
             height: 25px;
+            fill: $grey;
+        }
+
+        span {
+            color: $grey;
         }
     }
 }

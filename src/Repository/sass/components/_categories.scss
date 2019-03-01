@@ -33,6 +33,11 @@
         @include desktop{
             grid-area: fcTrend1;
             grid-template: 0.5fr auto auto 40px / repeat(2, 1fr) !important;
+            grid-template-areas:
+                    "cImage cImage"
+                    "cTitle cTitle"
+                    "cDesc cDesc"
+                    "cNumber cActions"!important;
             padding-bottom: 15px!important;
 
             .tc-category__image {
@@ -149,12 +154,14 @@
         grid-area: cTitle;
         padding: 0 10px;
         margin-top: 15px;
+        font-weight: 700;
     }
 
     .tc-category__description {
         grid-area: cDesc;
         padding: 0 10px;
         margin-top: 15px;
+        color: $hardgrey;
     }
 
     .tc-category__numberArticles {
@@ -179,11 +186,13 @@
         justify-content: flex-start;
         svg {
             height: 25px;
+            fill: $grey;
         }
     }
 
     .userCardActions__loveCount {
         margin-right: 5px;
+        color: $grey;
     }
 
     /**
